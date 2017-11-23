@@ -1,0 +1,51 @@
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html>
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>Cryptee</title>
+
+    <!-- CSS -->
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navbar_top.css">
+
+    <!-- JS -->
+
+    <script src="js/lib/angular.js"></script>
+    <script src="js/lib/angular-ui-router.min.js"></script>
+    <script src="js/lib/jquery-3.2.1.min.js"></script>
+    <script src="js/lib/chart.js/dist/Chart.min.js"></script>
+    <script src="js/lib/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script src="js/lib/angular-locale_fr-fr.js"></script>
+    <script src="app.js"></script>
+
+    <!-- Controllers -->
+
+    <script src="app/controllers/AppController.js"></script>
+    <script src="app/controllers/ProjectController.js"></script>
+    <script src="app/controllers/NavbarTopController.js"></script>
+
+    <!-- Factories -->
+
+    <script src="app/factories/CurrenciesFactory.js"></script>
+
+    <!-- Directives -->
+
+    <script src="app/directives/NavbarTop.js"></script>
+
+</head>
+    <!-- apply our angular app to our site -->
+<body ng-app="crypteeApp">
+
+    <!-- NAVIGATION -->
+    <navbar-top></navbar-top>
+
+    <!-- MAIN CONTENT -->
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+    <div ui-view autoscroll="false" class="main"></div>
+
+</body>
+</html>

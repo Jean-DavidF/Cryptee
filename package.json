@@ -1,0 +1,26 @@
+{
+  "name": "cryptee",
+  "version": "1.0.0",
+  "description": "A cryptocurrency web application.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jean-DavidF/Cryptee.git"
+  },
+  "author": "Cryptee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jean-DavidF/Cryptee/issues"
+  },
+  "homepage": "https://github.com/Jean-DavidF/Cryptee#readme",
+  "dependencies" : {
+    "express"    : "~4.16.2",
+    "mongoose"   : "~4.13.14",
+    "morgan"     : "~1.9.0",
+    "body-parser": "~1.14.2",
+    "method-override": "~2.3.10"
+  }
+}
