@@ -16,11 +16,11 @@
     "url": "https://github.com/Jean-DavidF/Cryptee/issues"
   },
   "homepage": "https://github.com/Jean-DavidF/Cryptee#readme",
-  "dependencies" : {
-    "express"    : "~4.16.2",
-    "mongoose"   : "~4.13.14",
-    "morgan"     : "~1.9.0",
+  "dependencies": {
     "body-parser": "~1.14.2",
-    "method-override": "~2.3.10"
+    "express": "~4.16.2",
+    "method-override": "~2.3.10",
+    "mongoose": "^4.13.4",
+    "morgan": "~1.9.0"
   }
 }
