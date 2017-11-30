@@ -6,23 +6,18 @@ crypteeApp.config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
 
-        // AUTH
-
         .state('app', {
             url: '/',
             templateUrl: 'app/views/app.html',
             controller: 'AppController'
         })
 
-        // MANAGE GROUPS
-
         .state('project', {
             url: '/project',
             templateUrl: 'app/views/project.html',
             controller: 'ProjectController'
         })
-
-// Permet de créer le défilement automatique
+        
 });
 
 function MainController($route, $routeParams, $location) {

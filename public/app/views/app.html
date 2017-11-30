@@ -4,12 +4,12 @@
     <div class="panel">
         <h1>Total Currencies <span class="label label-info">{{ currencies.length }}</span></h1>
     </div>
-
+    
     <!-- CURRENCY LIST -->
     <div>
 
-        <ul ng-repeat="currency in currencies">
-            <li style="cursor: pointer;" ng-click="deleteCurrency(currency._id)"><b>Nom</b> : {{ currency.name }} / <b>Valeur</b> : {{ currency.value }} $</li>
+        <ul ng-repeat="currency in currenciesFactory.currencies">
+            <li style="cursor: pointer;" ng-click="removeCurrency(currency, $index)"><b>Nom</b> : {{ currency.name }} / <b>Valeur</b> : {{ currency.value }} $</li>
         </ul>
 
     </div>
@@ -19,12 +19,12 @@
         <form>
             <div>
                 <!-- BIND THIS VALUE TO formData.name IN ANGULAR -->
-                <input type="text" style="display: block; width: 250px;" placeholder="Nom de la crypto-monnaie" ng-model="formData.name">
-                <input type="number" style="display:block; width: 250px;" placeholder="Valeur actuelle de la crypto-monnaie" ng-model="formData.value">
+                <input type="text" style="display: block; width: 250px;" placeholder="Nom de la crypto-monnaie" ng-model="newCurrency.name">
+                <input type="number" style="display:block; width: 250px;" placeholder="Valeur actuelle de la crypto-monnaie" ng-model="newCurrency.value">
             </div>
 
             <!-- createToDo() WILL CREATE NEW TODOS -->
-            <button type="submit" ng-click="createCurrency()">Create</button>
+            <button type="submit" ng-click="addCurrency()">Create</button>
         </form>
     </div>
 
