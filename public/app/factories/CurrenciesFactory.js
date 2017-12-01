@@ -18,7 +18,6 @@ function currenciesFactory($http) {
 		    if (callback) {
 		    	callback(currencies);
 		    }
-
 		    return factory;
 		});
 
