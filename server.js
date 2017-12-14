@@ -8,7 +8,6 @@ var methodOverride = require('method-override'); // simulate DELETE and PUT (exp
 var database = require('./modules/database');
 var port     = process.env.PORT || 8888;         // set the port
 
-
 // configuration ===============================================================
 mongoose.connect(database.url);     // connect to mongoDB database on modulus.io
 
@@ -21,6 +20,13 @@ app.use(methodOverride());
 
 // routes ======================================================================
 require('./modules/routes/currencies.js')(app);
+
+app.use(function(req, res, next) {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+	res.header('Access-Control-Allow-Headers', 'Content-Type');
+	next();
+});
 
 // listen (start app with node server.js) ======================================
 app.listen(port);
