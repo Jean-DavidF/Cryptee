@@ -8,8 +8,8 @@
     <!-- CURRENCY LIST -->
     <div>
 
-        <ul ng-repeat="currency in currencies">
-            <li style="cursor: pointer;" ng-click="deleteCurrency(currency._id)"><b>Nom</b> : {{ currency.CoinName }}</li>
+        <ul>
+            <li ng-repeat="currency in currencies" style="cursor: pointer;" ng-click="deleteCurrency(currency._id)"><b>Nom</b> : {{ currency.CoinName }}</li>
         </ul>
 
     </div>
