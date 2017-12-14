@@ -12,7 +12,12 @@ function currenciesFactory($http) {
 
 	// Récupère l'ensemble des cryptos monnaies
 	factory.getCurrencies = function (callback) {
-		$http.get('/api/currencies').success(function(currencies) {
+
+		var mapping = {
+			'/api/currencies' : 'https://min-api.cryptocompare.com/data/all/coinlist'
+		}
+
+		$http.get(mapping['/api/currencies']).success(function(currencies) {
 		    factory.currencies = currencies;
 		    
 		    if (callback) {

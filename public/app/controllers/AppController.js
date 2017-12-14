@@ -29,7 +29,8 @@ function AppController($scope, currenciesFactory, $location, $http) {
     };
 
     currenciesFactory.getCurrencies(function(data) {
-        $scope.currencies = data;
+        $scope.currencies = data.Data;
+        console.log($scope.currencies);
     });
 }
 
