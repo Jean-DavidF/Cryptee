@@ -9,23 +9,9 @@
     <div>
 
         <ul>
-            <li ng-repeat="currency in currencies" style="cursor: pointer;" ng-click="deleteCurrency(currency._id)"><b>Nom</b> : {{ currency.CoinName }}</li>
+            <li ng-repeat="currency in currencies" style="cursor: pointer;"><b>Nom</b> : {{ currency.CoinName }}</li>
         </ul>
 
-    </div>
-
-    <!-- FORM TO CREATE CURRENCIES -->
-    <div>
-        <form>
-            <div>
-                <!-- BIND THIS VALUE TO formData.name IN ANGULAR -->
-                <input type="text" style="display: block; width: 250px;" placeholder="Nom de la crypto-monnaie" ng-model="formData.name">
-                <input type="number" style="display:block; width: 250px;" placeholder="Valeur actuelle de la crypto-monnaie" ng-model="formData.value">
-            </div>
-
-            <!-- createToDo() WILL CREATE NEW TODOS -->
-            <button type="submit" ng-click="createCurrency()">Create</button>
-        </form>
     </div>
 
 </div>
