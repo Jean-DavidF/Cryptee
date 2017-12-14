@@ -1,11 +1,14 @@
 function AppController($scope, currenciesFactory, $location, $http, $state) {
     $scope.formData = {};
     $scope.currencies = [ ];
+    $scope.searchCurrency = '';
 
     $scope.currenciesFactory = currenciesFactory;
 
     currenciesFactory.getCurrencies(function(data) {
-        $scope.currencies = data.Data;
+        angular.forEach(data.Data, function(element) {
+            $scope.currencies.push(element);
+        });
     });
 
     $scope.viewCurrency = function(Coin) {
@@ -21,7 +24,6 @@ function AppController($scope, currenciesFactory, $location, $http, $state) {
         }
 
         $state.go('currency', {CoinName : fixCoin});
-
     };
 }
 

@@ -5,13 +5,16 @@
         <h1>Total Currencies <span class="label label-info">{{ currencies.length }}</span></h1>
     </div>
 
+    <!-- SEARCH CURRENCY -->
+    <input placeholder="Rechercher une crypto-monnaie..." ng-model="searchCurrency">
+
     <!-- CURRENCY LIST -->
     <div>
-
         <ul>
-            <li ng-repeat="currency in currencies" style="cursor: pointer;" ng-click="viewCurrency(currency.CoinName)"><b>Nom</b> : {{ currency.CoinName }}</li>
+            <li ng-repeat="currency in currencies| filter: {'CoinName':searchCurrency}" style="cursor: pointer;" ng-click="viewCurrency(currency.CoinName)">
+                <b>Nom</b> : {{ currency.CoinName }}
+            </li>
         </ul>
-
     </div>
 
 </div>
