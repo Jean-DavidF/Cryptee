@@ -9,7 +9,7 @@
     <div>
 
         <ul>
-            <li ng-repeat="currency in currencies" style="cursor: pointer;"><b>Nom</b> : {{ currency.CoinName }}</li>
+            <li ng-repeat="currency in currencies" style="cursor: pointer;" ng-click="viewCurrency(currency.CoinName)"><b>Nom</b> : {{ currency.CoinName }}</li>
         </ul>
 
     </div>

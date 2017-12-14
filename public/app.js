@@ -38,7 +38,14 @@ crypteeApp.config(function($stateProvider, $urlRouterProvider) {
             controller: 'ContactController'
         })
 
-// Permet de créer le défilement automatique
+        // Currency
+
+        .state('currency', {
+            url: '/coins/{CoinName}',
+            templateUrl: 'app/views/currency.html',
+            controller: 'CurrencyController'
+        })
+
 });
 
 function MainController($route, $routeParams, $location) {
