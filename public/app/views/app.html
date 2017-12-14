@@ -11,8 +11,14 @@
     <!-- CURRENCY LIST -->
     <div>
         <ul>
-            <li ng-repeat="currency in currencies| filter: {'CoinName':searchCurrency}" style="cursor: pointer;" ng-click="viewCurrency(currency.CoinName)">
-                <b>Nom</b> : {{ currency.CoinName }}
+            <li ng-repeat="currency in currencies | filter: {'name':searchCurrency}" style="cursor: pointer;" ng-click="viewCurrency(currency.symbol)">
+            <b>Nom</b> : {{ currency.name}} <br>
+            <b>Rang</b> : {{ currency.rank }} <br>
+            <b>Prix (USD)</b> : {{ currency.price_usd }} <br>
+            <b>Prix (EUR)</b> : {{ currency.price_eur }} <br>
+            <b>Changement sur 1h</b> : {{ currency.percent_change_1h }} %<br>
+            <b>Changement sur 24h</b> : {{ currency.percent_change_24h }} % <br>
+            <b>Changement sur 7 jours</b> : {{ currency.percent_change_7d }} % <br>
             </li>
         </ul>
     </div>

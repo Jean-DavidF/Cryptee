@@ -6,9 +6,7 @@ function AppController($scope, currenciesFactory, $location, $http, $state) {
     $scope.currenciesFactory = currenciesFactory;
 
     currenciesFactory.getCurrencies(function(data) {
-        angular.forEach(data.Data, function(element) {
-            $scope.currencies.push(element);
-        });
+            $scope.currencies = data;
     });
 
     $scope.viewCurrency = function(Coin) {
