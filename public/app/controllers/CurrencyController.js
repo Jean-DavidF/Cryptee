@@ -5,11 +5,16 @@ function CurrencyController($scope, currencyFactory, $location) {
         $scope.currency = data[0];
     });
 
-    setInterval(function(){
-        console.log('updated !');
-        currencyFactory.getCurrency(function(data) {
-	        $scope.currency = data[0];
-	    });
+    var CurrencyInterval = setInterval(function(){
+        var CurrencyId = $location.path().replace('/dashboard','');
+
+        if ($location.path().indexOf(CurrencyId) !== -1 && CurrencyId !== '') {
+        	currencyFactory.getCurrency(function(data) {
+		        $scope.currency = data[0];
+		    });
+        } else {
+        	clearInterval(CurrencyInterval);
+        }
     }, 30000);
 }
 

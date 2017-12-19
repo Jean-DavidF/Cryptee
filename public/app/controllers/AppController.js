@@ -8,11 +8,14 @@ function AppController($scope, currenciesFactory, $location, $http, $state) {
         $scope.currencies = data;
     });
 
-    setInterval(function(){
-        console.log('updated !');
-        currenciesFactory.getCurrencies(function(data) {
-            $scope.currencies = data;
-        });
+    var AllCurrenciesInterval = setInterval(function(){
+        if ('/dashboard' === $location.path()) {
+            currenciesFactory.getCurrencies(function(data) {
+                $scope.currencies = data;
+            });
+        } else {
+            clearInterval(AllCurrenciesInterval);
+        }
     }, 30000);
 
     $scope.viewCurrency = function(Id) {
