@@ -1,10 +1,6 @@
 function NavbarTopController($scope, $location) {
 
-	$scope.isActive = function (viewLocation) { 
-        return viewLocation === $location.path();
-    };
-
-    $scope.isDashboard = function (viewLocation) {
+    $scope.isActive = function (viewLocation) {
 		return $location.path().indexOf(viewLocation) !== -1;
     }
 }
