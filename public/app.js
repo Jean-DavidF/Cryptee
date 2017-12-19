@@ -6,10 +6,18 @@ crypteeApp.config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
 
+        // Landing page
+
+        .state('landing', {
+            url: '/',
+            templateUrl: 'app/views/landing.html',
+            controller: 'LandingController'
+        })
+
         // Dashboard
 
-        .state('app', {
-            url: '/',
+        .state('dashboard', {
+            url: '/dashboard',
             templateUrl: 'app/views/app.html',
             controller: 'AppController'
         })
@@ -41,7 +49,7 @@ crypteeApp.config(function($stateProvider, $urlRouterProvider) {
         // Currency
 
         .state('currency', {
-            url: '/{CoinId}',
+            url: '/dashboard/{CoinId}',
             templateUrl: 'app/views/currency.html',
             controller: 'CurrencyController'
         })
