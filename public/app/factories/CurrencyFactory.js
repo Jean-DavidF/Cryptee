@@ -13,7 +13,7 @@ function currencyFactory($http, $location) {
 	factory.getCurrency = function(callback){
 		var CurrencyId = $location.path().replace('/dashboard','');
 
-	    $http.get('https://api.coinmarketcap.com/v1/ticker' + CurrencyId + '/').success(function(currency) {
+	    $http.get('https://api.coinmarketcap.com/v1/ticker' + CurrencyId + '/?convert=EUR').success(function(currency) {
 	    	factory.currency = currency;
 
 	    	if (callback) {
