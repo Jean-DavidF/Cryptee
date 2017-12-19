@@ -11,7 +11,7 @@ function currencyFactory($http, $location) {
 
 	// Récupère les datas d'une cryptomonnaie
 	factory.getCurrency = function(callback){
-		var CurrencyId = $location.path();
+		var CurrencyId = $location.path().replace('/dashboard','');
 
 	    $http.get('https://api.coinmarketcap.com/v1/ticker' + CurrencyId + '/').success(function(currency) {
 	    	factory.currency = currency;
