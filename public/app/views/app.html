@@ -11,7 +11,7 @@
     <!-- CURRENCY LIST -->
     <div>
         <ul>
-            <li ng-repeat="currency in currencies | filter: {'name':searchCurrency}" style="cursor: pointer;" ng-click="viewCurrency(currency.symbol)">
+            <li ng-repeat="currency in currencies | filter: {'name':searchCurrency}" style="cursor: pointer;" ng-click="viewCurrency(currency.id)">
             <b>Nom</b> : {{ currency.name}} <br>
             <b>Rang</b> : {{ currency.rank }} <br>
             <b>Prix (USD)</b> : {{ currency.price_usd }} <br>
