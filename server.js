@@ -7,6 +7,21 @@ var bodyParser = require('body-parser');         // pull information from HTML P
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var database = require('./modules/database');
 var port     = process.env.PORT || 8888;         // set the port
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+
+app.use(express.static(__dirname + '/public'));
+
+io.on('connection', function(socket) {
+  console.log('new connection');
+
+  socket.on('add-customer', function(customer) {
+    io.emit('notification', {
+      message: 'new customer',
+      customer: customer
+    });
+  });
+});
 
 // configuration ===============================================================
 mongoose.connect(database.url);     // connect to mongoDB database on modulus.io

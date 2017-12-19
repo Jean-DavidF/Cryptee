@@ -41,7 +41,7 @@ crypteeApp.config(function($stateProvider, $urlRouterProvider) {
         // Currency
 
         .state('currency', {
-            url: '/coins/{CoinName}',
+            url: '/{CoinId}',
             templateUrl: 'app/views/currency.html',
             controller: 'CurrencyController'
         })

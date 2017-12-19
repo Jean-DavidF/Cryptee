@@ -6,23 +6,12 @@ function AppController($scope, currenciesFactory, $location, $http, $state) {
     $scope.currenciesFactory = currenciesFactory;
 
     currenciesFactory.getCurrencies(function(data) {
-            $scope.currencies = data;
+        $scope.currencies = data;
     });
 
-    $scope.viewCurrency = function(Coin) {
-
-        // Fix name of currency (url rewriting)
-        var fixCoin = [];
-
-        if (Coin) {
-            for (var i = 0; i < Coin.length; i++) {
-                fixCoin.push(Coin[i].replace(/\s+/g, '-').toLowerCase());
-            }
-            fixCoin = fixCoin.join('');
-        }
-
-        $state.go('currency', {CoinName : fixCoin});
+    $scope.viewCurrency = function(Id) {
+        $state.go('currency', {CoinId : Id});
     };
 }
 
-crypteeApp.controller('AppController', ['$scope', 'currenciesFactory', '$location', '$http','$state', AppController]);
+crypteeApp.controller('AppController', ['$scope', 'currenciesFactory', '$location', '$http', '$state', AppController]);
