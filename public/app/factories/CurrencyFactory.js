@@ -1,4 +1,3 @@
-// when landing on the page, get all currencies and show them
 function currencyFactory($http, $location) {
 	var factory = {
 		currency: [ ],
@@ -10,6 +9,7 @@ function currencyFactory($http, $location) {
 		}
 	}
 
+	// Récupère les datas d'une cryptomonnaie
 	factory.getCurrency = function(callback){
 		var CurrencyId = $location.path();
 

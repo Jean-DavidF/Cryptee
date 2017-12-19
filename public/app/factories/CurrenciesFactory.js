@@ -1,4 +1,3 @@
-// when landing on the page, get all currencies and show them
 function currenciesFactory($http) {
 	var factory = {
 		currencies: [ ],

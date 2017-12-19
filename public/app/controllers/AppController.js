@@ -1,5 +1,4 @@
 function AppController($scope, currenciesFactory, $location, $http, $state) {
-    $scope.formData = {};
     $scope.currencies = [ ];
     $scope.searchCurrency = '';
 
