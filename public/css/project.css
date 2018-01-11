@@ -1,0 +1,36 @@
+.title {
+	font-family: 'Montserrat', serif;
+	font-weight: 600;
+	color: #374083;
+	font-size: 1.6rem;
+	margin: 50px 0;
+	position: relative;
+    width: max-content;
+}
+
+.title.center-border {
+    margin: 50px auto;
+}
+
+.center-border:after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: -15px;
+	height: 5px;
+	width: 70%;
+	border-radius: 5px;
+	background-color: #BB8CE2;
+}
+
+.left-border:after {
+	content: '';
+	position: absolute;
+	left: 0px;
+	bottom: -15px;
+	height: 5px;
+	width: 70%;
+	border-radius: 5px;
+	background-color: #BB8CE2;
+}
