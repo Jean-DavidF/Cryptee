@@ -1,3 +1,24 @@
 .active {
 	color: red;
 }
+
+nav.navbar-top {
+	background-color: #272F6B;
+	width: 100%;
+	height: 50px;
+}
+
+.navbar-top .logo-navbar-top {
+	display: inline-block;
+}
+
+.navbar-top .logo-navbar-top img {
+	width: 90px;
+	margin-top: 15px;
+	margin-left: 25px;
+	fill: white;
+}
+
+.navbar-top .logo-navbar-top svg:hover path {
+	fill: red;
+}
