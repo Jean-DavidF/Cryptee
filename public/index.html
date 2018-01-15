@@ -11,6 +11,7 @@
     
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/navbar_top.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/landing_page.css">
     <link rel="stylesheet" href="css/project.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Roboto:100,300,400,500,700,900" rel="stylesheet">
@@ -36,6 +37,7 @@
     <script src="app/controllers/CurrencyController.js"></script>
     <script src="app/controllers/ContactController.js"></script>
     <script src="app/controllers/NavbarTopController.js"></script>
+    <script src="app/controllers/FooterController.js"></script>
 
     <!-- Factories -->
 
@@ -45,6 +47,7 @@
     <!-- Directives -->
 
     <script src="app/directives/NavbarTop.js"></script>
+    <script src="app/directives/Footer.js"></script>
 
 </head>
     <!-- apply our angular app to our site -->
@@ -56,6 +59,9 @@
     <!-- MAIN CONTENT -->
     <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
     <div ui-view autoscroll="false" class="main"></div>
+
+    <!-- FOOTER -->
+    <footer></footer>
 
 </body>
 </html>
