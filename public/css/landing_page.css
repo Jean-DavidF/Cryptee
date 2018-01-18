@@ -1,0 +1,84 @@
+#banner_landingpage {
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(59,69,137,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(59,69,137,1) 0%, rgba(39,47,107,1) 66%, rgba(39,47,107,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(59,69,137,1)), color-stop(66%, rgba(39,47,107,1)), color-stop(100%, rgba(39,47,107,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(59,69,137,1) 0%, rgba(39,47,107,1) 66%, rgba(39,47,107,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(59,69,137,1) 0%, rgba(39,47,107,1) 66%, rgba(39,47,107,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(59,69,137,1) 0%, rgba(39,47,107,1) 66%, rgba(39,47,107,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(59,69,137,1) 0%, rgba(39,47,107,1) 66%, rgba(39,47,107,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b4589', endColorstr='#272f6b', GradientType=1 );
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+#banner_landingpage h1 {
+	color: white;
+	margin: 0;
+}
+
+#banner_landingpage img {
+	position: absolute;
+	bottom: 150px;
+	width: 100%;
+}
+
+#presentation-dashboard {
+	width: 100%;
+	position: relative;
+	padding-top: 350px;
+	text-align: center;
+}
+
+#presentation-dashboard img {
+	position: absolute;
+	top: -125px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#presentation-dashboard p {
+	margin: 0 90px;
+	line-height: 40px;
+}
+
+#presentation-dashboard a {
+	color: #272F6B;
+	border: 2px solid #272F6B;
+	border-radius: 30px;
+	padding: 5px 30px;
+	text-decoration: none;
+	transition-duration: 0.3s;
+}
+
+#presentation-dashboard a:hover {
+	color: white;
+	background-color: #272F6B;
+}
+
+#subpresentation-dashboard {
+	width: 65%;
+	height: auto;
+	background-color: #F6F6F6;
+	float: right;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	position: relative;
+	margin-top: 150px;
+}
+
+#subpresentation-dashboard h2, p {
+	line-height: 40px;
+	margin: 0px 90px 0px 180px;
+}
+
+#subpresentation-dashboard img {
+	position: absolute;
+	top: 52%;
+	left: -450px;
+	transform: translateY(-50%);
+}
