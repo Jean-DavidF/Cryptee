@@ -42,7 +42,7 @@
 <div class="wrapper-grey">
 	<div class="container">
 		<div class="contact-card-form">
-			<form id="contact-form">
+			<form id="contact-form" ng-submit='sendmail()'>
 				<div class="contact-form-container">
 					<div class="contact-form-left">
 							<div class="form-group">
@@ -68,10 +68,10 @@
 						</div>
 					</div>
 				</div>
-		</div>
 				<div class="button-container">
-					<button class="main-button" type="button">Envoyer</button>
+					<button class="main-button" type="submit">Envoyer</button>
 				</div>
 			</form>
+		</div>
 	</div>
 </div>
