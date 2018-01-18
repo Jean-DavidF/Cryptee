@@ -129,6 +129,7 @@ nav.navbar-top {
 
 	.navbar-top .menu-navbar-top {
 		position: fixed;
+		z-index: 98;
 		right: -320px;
 		bottom: 0;
 		z-index: 98;
