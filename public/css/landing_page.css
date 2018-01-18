@@ -29,20 +29,6 @@
 	transform: translateX(-50%);
 }
 
-.main-button {
-	color: #272F6B;
-	border: 2px solid #272F6B;
-	border-radius: 30px;
-	padding: 5px 30px;
-	text-decoration: none;
-	transition-duration: 0.3s;
-}
-
-.main-button:hover {
-	color: white;
-	background-color: #272F6B;
-}
-
 #subpresentation-dashboard {
 	width: 65%;
 	height: auto;

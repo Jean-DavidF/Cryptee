@@ -137,22 +137,7 @@
     resize: none;
     background-color: #F3F3F3 !important;
 }
-.contact-button {
-    color: #272F6B;
-    border: 2px solid #272F6B;
-    border-radius: 30px;
-    padding: 5px 30px;
-    text-decoration: none;
-    transition-duration: 0.3s;
-    cursor: pointer;
-}
-.contact-button:hover {
-    color: white;
-    background-color: #272F6B;
-}
-.contact-button span {
-    font-size: 16px;
-}
+
 @media screen and (max-width: 768px) {
   .contact-card-form {
     padding: 30px;

@@ -149,3 +149,26 @@ body {
 	background-color: #F6F6F6;
     position: relative;
 }
+
+
+.button-container {
+	text-align: center;
+  }
+
+.main-button {
+	color: #272F6B;
+	border: 2px solid #272F6B;
+	border-radius: 30px;
+	font-size: 16px;
+	padding: 5px 30px;
+	text-decoration: none;
+	transition-duration: 0.3s;
+	font-family: 'Montserrat', serif;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.main-button:hover {
+	color: white;
+	background-color: #272F6B;
+}
