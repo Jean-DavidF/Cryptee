@@ -1,5 +1,6 @@
 nav.navbar-top {
-    position: fixed;
+    position: sticky;
+    z-index: 99;
     top: 0;
     left: 0;
     right: 0;
@@ -130,7 +131,8 @@ nav.navbar-top {
 		position: fixed;
 		right: -320px;
 		bottom: 0;
-		top: 60px;
+		z-index: 98;
+		top: 55px;
 		background-color: #272F6B;
 		display: block;
 		width: 300px;
