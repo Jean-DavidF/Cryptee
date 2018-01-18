@@ -16,37 +16,20 @@
 	position: relative;
 }
 
-#banner_landingpage h1 {
-	color: white;
-	margin: 0;
-}
-
 #banner_landingpage img {
 	position: absolute;
 	bottom: 150px;
 	width: 100%;
 }
 
-#presentation-dashboard {
-	width: 100%;
-	position: relative;
-	padding-top: 350px;
-	text-align: center;
-}
-
-#presentation-dashboard img {
+.presentation-img {
 	position: absolute;
 	top: -125px;
 	left: 50%;
 	transform: translateX(-50%);
 }
 
-#presentation-dashboard p {
-	margin: 0 90px;
-	line-height: 40px;
-}
-
-#presentation-dashboard a {
+.main-button {
 	color: #272F6B;
 	border: 2px solid #272F6B;
 	border-radius: 30px;
@@ -55,7 +38,7 @@
 	transition-duration: 0.3s;
 }
 
-#presentation-dashboard a:hover {
+.main-button:hover {
 	color: white;
 	background-color: #272F6B;
 }
@@ -71,14 +54,15 @@
 	margin-top: 150px;
 }
 
-#subpresentation-dashboard h2, p {
-	line-height: 40px;
-	margin: 0px 90px 0px 180px;
+#subpresentation-dashboard div {
+	width: 75%;
+	float: right;
+	margin-right: 30px;
 }
 
 #subpresentation-dashboard img {
 	position: absolute;
 	top: 52%;
-	left: -450px;
+	left: -550px;
 	transform: translateY(-50%);
 }
