@@ -49,6 +49,63 @@
 #subpresentation-dashboard img {
 	position: absolute;
 	top: 52%;
-	left: -550px;
+	left: -700px;
 	transform: translateY(-50%);
+	width: 800px;
+}
+
+.top-footer {
+	margin-top: 150px;
+	background-color: #272F6B;
+	position: relative;
+}
+
+.top-footer h2 {
+	max-width: 50%;
+}
+
+.footer-line {
+	width: 100%;
+	margin-top: -90px;
+	margin-bottom: -20px;
+}
+
+@media screen and (max-width: 800px) {
+
+	.presentation-img {
+		width: 80%;
+	}
+
+	#subpresentation-dashboard {
+		width: 100%;
+		background-color: #F6F6F6;
+		padding-top: 80px;
+		padding-bottom: 35%;
+		position: relative;
+		margin-top: 150px;
+	}
+
+	#subpresentation-dashboard div {
+		width: 80%;
+		float: none;
+		margin-left: 50%;
+		transform: translateX(-50%);
+	}
+
+	#subpresentation-dashboard img {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 85%;
+	}
+
+	.top-footer {
+		margin-top: 180px;
+		background-color: #272F6B;
+		position: relative;
+	}
+
+	.top-footer h2 {
+		max-width: 80%;
+	}
 }
