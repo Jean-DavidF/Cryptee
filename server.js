@@ -1,27 +1,17 @@
 // Set up ========================
-var express  = require('express');
-var app      = express();                        // Create our app w/ express
-var mongoose = require('mongoose');              // Mongoose for mongodb
-var morgan   = require('morgan');                // Log requests to the console (express4)
-var bodyParser = require('body-parser');         // Pull information from HTML POST (express4)
-var methodOverride = require('method-override'); // Simulate DELETE and PUT (express4)
-var database = require('./modules/database');
-var port     = process.env.PORT || 8888;         // Set the port
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
+const express  = require('express');
+const app      = express();                        // Create our app w/ express
+const mongoose = require('mongoose');              // Mongoose for mongodb
+const morgan   = require('morgan');                // Log requests to the console (express4)
+const bodyParser = require('body-parser');         // Pull information from HTML POST (express4)
+const methodOverride = require('method-override'); // Simulate DELETE and PUT (express4)
+const database = require('./modules/database');
+const port     = process.env.PORT || 8888;         // Set the port
+const server = require('http').Server(app);
+const nodemailer = require('nodemailer');
+const constants = require('./modules/utils/constants.js');
 
 app.use(express.static(__dirname + '/public'));
-
-io.on('connection', function(socket) {
-  console.log('new connection');
-
-  socket.on('add-customer', function(customer) {
-    io.emit('notification', {
-      message: 'new customer',
-      customer: customer
-    });
-  });
-});
 
 // Configuration ===============================================================
 mongoose.connect(database.url);     // Connect to mongoDB database on modulus.io
@@ -35,6 +25,7 @@ app.use(methodOverride());
 
 // Routes ======================================================================
 require('./modules/routes/currencies.js')(app);
+require('./modules/routes/contact-form.js')(app);
 
 
 // Headers =====================================================================

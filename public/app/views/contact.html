@@ -38,29 +38,29 @@
 <div class="wrapper-grey">
 	<div class="container">
 		<div class="contact-card-form">
-			<form id="contact-form" ng-submit='sendmail()'>
+			<form id="contact-form" ng-submit='sendMail()'>
 				<div class="contact-form-container">
 					<div class="contact-form-left">
 							<div class="form-group">
-								<input type="text" required="required"/>
+								<input type="text" ng-model="contactLastName" required="required"/>
 								<label class="control-label" for="input">Nom</label><i class="bar"></i>
 							</div>
 							<div class="form-group">
-								<input type="text" required="required"/>
+								<input type="text" ng-model="contactFirstName" required="required"/>
 								<label class="control-label" for="input">Prénom</label><i class="bar"></i>
 							</div>
 							<div class="form-group">
-								<input type="mail" required="required"/>
+								<input type="mail" ng-model="contactEmail" required="required"/>
 								<label class="control-label" for="input">Mail</label><i class="bar"></i>
 							</div>
 					</div>
 					<div class="contact-form-right">
 						<div class="form-group">
-							<input type="text" required="required"/>
+							<input type="text" ng-model="contactSubject" required="required"/>
 							<label class="control-label" for="textarea">Sujet</label><i class="bar"></i>
 						</div>
 						<div class="form-group">
-							<textarea rows="6" name="message" id="message" placeholder="Votre message..."></textarea>
+							<textarea rows="6" name="message" id="message" ng-model="contactMsg" placeholder="Votre message..."></textarea>
 						</div>
 					</div>
 				</div>
