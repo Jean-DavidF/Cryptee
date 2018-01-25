@@ -1,0 +1,78 @@
+/********** NOTIFICATION **********/
+
+#notificationPinPoint {
+	z-index: 1051;
+	position: fixed;
+	top: 75px;
+	right: 20px;
+	width: 340px;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+	cursor: pointer;
+	box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
+	-o-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.2);
+
+	transition: all 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+	-moz-transition: all 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+	-o-transition: all 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+	-webkit-transition: all 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+
+	transform: translate(500px, 0);
+	-moz-transform: translate(500px, 0);
+	-webkit-transform: translate(500px, 0);
+	-o-transform: translate(500px, 0);
+
+	font-family: 'Roboto', serif;
+    font-weight: 600;
+}
+
+.notification:hover {
+	box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3);
+	-o-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.3);
+}
+
+.notification.notification-info  {
+	background-color: #1a589f;
+	color: #FFFFFF;
+}
+
+.notification.notification-success {
+	background-color: #1cb777;
+	color: #ffffff;
+}
+
+.notification.notification-error {
+	background-color: #F44336;
+	color: #FFFFFF;
+}
+
+.notification.notification-warning {
+	background-color: #eac019;
+	color: #FFFFFF;
+}
+
+.notification .notification-icon {
+    display: inline-block;
+    font-size: 23px;
+    position: relative;
+    margin: 0px 15px;
+}
+
+.notification .notification-icon {
+	color: #FFFFFF;
+}
+
+.notification .notification-text {
+    display: inline-block;
+    padding: 15px 15px 15px 0px;
+}
