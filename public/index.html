@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/notification.css">
 
     <!-- JS -->
 
@@ -51,12 +52,18 @@
     <script src="app/directives/Footer.js"></script>
     <script src="app/directives/CheckImage.js"></script>
 
+    <!-- Services -->
+
+    <script src="app/services/NotificationService.js"></script>
+
 </head>
     <!-- apply our angular app to our site -->
 <body ng-app="crypteeApp">
 
     <!-- NAVIGATION -->
     <navbar-top></navbar-top>
+
+    <div id="notificationPinPoint"></div>
 
     <!-- MAIN CONTENT -->
     <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
