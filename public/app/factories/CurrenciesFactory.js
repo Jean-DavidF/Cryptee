@@ -12,7 +12,7 @@ function currenciesFactory($http) {
 	// Récupère l'ensemble des cryptos monnaies
 	factory.getCurrencies = function (callback) {
 		var mapping = {
-			'/api/currencies' : 'https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=100'
+			'/api/currencies' : 'https://api.cryptee.fr/getalldata'
 		}
 
 		$http.get(mapping['/api/currencies']).success(function(currencies) {

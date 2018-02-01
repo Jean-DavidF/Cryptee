@@ -104,6 +104,13 @@ body {
     margin: 25px auto;
 }
 
+@media screen and (max-width: 600px) {
+	.title.center-border {
+	    width: auto;
+    	text-align: center;
+	}
+}
+
 .center-border:after {
 	content: '';
 	position: absolute;
@@ -153,7 +160,7 @@ body {
 
 .button-container {
 	text-align: center;
-  }
+}
 
 .main-button {
 	color: #272F6B;

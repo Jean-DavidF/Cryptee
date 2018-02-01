@@ -15,8 +15,6 @@
 </div>
 <div class="line-left">
 	<svg width="19px" height="521px" viewBox="0 0 19 521" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-		<!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
-		<desc>Created with Sketch.</desc>
 		<defs></defs>
 		<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
 			<g id="Contact" transform="translate(-78.000000, -384.000000)" stroke-width="2">
@@ -28,8 +26,6 @@
 </div>
 <div class="line-right">
 	<svg width="21px" height="354px" viewBox="0 0 21 354" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-		<!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
-		<desc>Created with Sketch.</desc>
 		<defs></defs>
 		<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
 			<g id="Contact" transform="translate(-925.000000, -588.000000)" stroke-width="2">
@@ -42,36 +38,36 @@
 <div class="wrapper-grey">
 	<div class="container">
 		<div class="contact-card-form">
-			<form id="contact-form">
+			<form id="contact-form" ng-submit='sendMail()'>
 				<div class="contact-form-container">
 					<div class="contact-form-left">
 							<div class="form-group">
-								<input type="text" required="required"/>
+								<input type="text" ng-model="contactLastName" required="required"/>
 								<label class="control-label" for="input">Nom</label><i class="bar"></i>
 							</div>
 							<div class="form-group">
-								<input type="text" required="required"/>
+								<input type="text" ng-model="contactFirstName" required="required"/>
 								<label class="control-label" for="input">Prénom</label><i class="bar"></i>
 							</div>
 							<div class="form-group">
-								<input type="mail" required="required"/>
+								<input type="mail" ng-model="contactEmail" required="required"/>
 								<label class="control-label" for="input">Mail</label><i class="bar"></i>
 							</div>
 					</div>
 					<div class="contact-form-right">
 						<div class="form-group">
-							<input type="text" required="required"/>
+							<input type="text" ng-model="contactSubject" required="required"/>
 							<label class="control-label" for="textarea">Sujet</label><i class="bar"></i>
 						</div>
 						<div class="form-group">
-							<textarea rows="6" name="message" id="message" placeholder="Votre Message..."></textarea>
+							<textarea rows="6" name="message" id="message" ng-model="contactMsg" placeholder="Votre message..."></textarea>
 						</div>
 					</div>
 				</div>
-		</div>
-				<div class="contact-button-container">
-					<button class="contact-button" type="button"><span>Envoyer</span></button>
+				<div class="button-container">
+					<button class="main-button" type="submit">Envoyer</button>
 				</div>
 			</form>
+		</div>
 	</div>
 </div>
