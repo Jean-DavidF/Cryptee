@@ -1,11 +1,12 @@
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
-const constants = require('../utils/constants.js');
+const config = require('../../config.js');
+
 var transport = nodemailer.createTransport({
-    service: constants.EMAIL_SERVICE,
+    service: config.EMAIL_SERVICE,
     auth: {
-        user: constants.EMAIL_ADDRESS,
-        pass: constants.EMAIL_PASSWORD
+        user: config.EMAIL_ADDRESS,
+        pass: config.EMAIL_PASSWORD
     }
 });
 
