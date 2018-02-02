@@ -162,6 +162,7 @@
     border-radius: 5px;
     font-size: 1rem;
     margin-top: 58px;
+    font-family: 'Montserrat', serif;
 }
 
 #contactMsg:focus {
