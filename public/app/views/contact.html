@@ -38,29 +38,47 @@
 <div class="wrapper-grey">
 	<div class="container">
 		<div class="contact-card-form">
-			<form id="contact-form" ng-submit='sendMail()'>
+			<form id="contact-form" name="contactForm" ng-submit='sendMail()'>
 				<div class="contact-form-container">
 					<div class="contact-form-left">
 							<div class="form-group">
-								<input type="text" ng-model="contactLastName" required="required"/>
+								<input type="text" name="contactLastName" ng-model="contactLastName" class="form-field" required="required"/>
 								<label class="control-label" for="input">Nom</label><i class="bar"></i>
+								<div ng-if="contactForm.contactLastName.$touched && contactForm.contactLastName.$error" class="alert alert-danger">
+					                <span class="input-error" ng-if="contactForm.contactLastName.$error.required">Merci d'insérer votre nom</span>
+					            </div>
 							</div>
 							<div class="form-group">
-								<input type="text" ng-model="contactFirstName" required="required"/>
+								<input type="text" name="contactFirstName" ng-model="contactFirstName" class="form-field" required="required"/>
 								<label class="control-label" for="input">Prénom</label><i class="bar"></i>
+								<div ng-if="contactForm.contactFirstName.$touched && contactForm.contactFirstName.$error" class="alert alert-danger">
+					                <span class="input-error" ng-if="contactForm.contactFirstName.$error.required">Merci d'insérer votre prénom</span>
+					            </div>
 							</div>
 							<div class="form-group">
-								<input type="mail" ng-model="contactEmail" required="required"/>
+								<input type="email" name="contactEmail" ng-model="contactEmail" class="form-field" required="required"/>
 								<label class="control-label" for="input">Mail</label><i class="bar"></i>
+								<div ng-if="contactForm.contactEmail.$touched && contactForm.contactEmail.$error" class="alert alert-danger">
+					                <span class="input-error" ng-if="contactForm.contactEmail.$error.required">Merci d'insérer votre adresse email</span>
+					                <span class="input-error error-email" ng-if="contactForm.contactEmail.$error.email">Merci d'insérer une adresse email valide</span>
+					            </div>
 							</div>
 					</div>
 					<div class="contact-form-right">
 						<div class="form-group">
-							<input type="text" ng-model="contactSubject" required="required"/>
+							<input type="text" name="contactSubject" ng-model="contactSubject" class="form-field" required="required"/>
 							<label class="control-label" for="textarea">Sujet</label><i class="bar"></i>
+							<div ng-if="contactForm.contactSubject.$touched && contactForm.contactSubject.$error" class="alert alert-danger">
+				                <span class="input-error" ng-if="contactForm.contactSubject.$error.required">Merci d'insérer un sujet</span>
+				            </div>
 						</div>
 						<div class="form-group">
-							<textarea rows="6" name="message" id="message" ng-model="contactMsg" placeholder="Votre message..."></textarea>
+							<textarea rows="5" name="contactMsg" id="contactMsg" ng-model="contactMsg" class="form-field" placeholder="Votre message..." required="required" minlength="20" maxlength="999"></textarea>
+							<div ng-if="contactForm.contactMsg.$touched && contactForm.contactMsg.$error" class="alert alert-danger">
+				                <span class="input-error" ng-if="contactForm.contactMsg.$error.required">Merci d'insérer votre message</span>
+				                <span class="input-error" ng-if="contactForm.contactMsg.$error.minlength">Votre message doit contenir au minimum 20 caractères</span>
+				                <span class="input-error" ng-if="contactForm.contactMsg.$error.maxlength">Votre message peut contenir au maximum 999 caractères</span>
+				            </div>
 						</div>
 					</div>
 				</div>

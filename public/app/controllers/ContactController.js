@@ -1,7 +1,5 @@
 function ContactController($scope, $http, notificationService) {
 
-	var data = [];
-
 	$scope.sendMail = function() {
 
 		var data = ({
@@ -14,10 +12,9 @@ function ContactController($scope, $http, notificationService) {
 
         $http.post('/contact-form', data)
 	        .success(function(data, status, headers, config) {
-	        	console.log('success!');
+	        	angular.element(document.getElementsByClassName('form-field')).val('');
 	        	notificationService.push(notificationService.type.SUCCESS, "Le message a été correctement envoyé !", 5);
 	        }).error(function(data, status, headers, config) {
-	        	console.log('error!');
 	        	notificationService.push(notificationService.type.ERROR, "Le message n'a pas pu être envoyé.", 5);
         });
     };
