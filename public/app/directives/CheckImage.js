@@ -1,20 +1,15 @@
-function CheckImage($http) {
+function CheckImage() {
 	var directive = {
-		restrict: 'A',
-		link: function(scope, element, attrs) {
-			attrs.$observe('ngSrc', function (ngSrc) {
-				$http.get(ngSrc).success(function() {
-					console.log('img ok');
-				}).error(function() {
-					console.log('img not ok');
-					// Mettre image par defaut
-					// element.attr('src', )
-				})
-			});
+			link: function(scope, element, attrs) {
+	      element.bind('error', function(response) {
+	        if (attrs.src != attrs.checkImage) {
+	          attrs.$set('src', attrs.checkImage);
+	        }
+	      });
+	    }
 		}
-	};
 
 	return directive;
 }
 
-crypteeApp.directive(['checkImage', '$http', CheckImage]);
+crypteeApp.directive('checkImage', CheckImage);
