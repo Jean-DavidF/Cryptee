@@ -1,27 +1,44 @@
-<div class="wrapper">
+<div class="wrapper app-page">
 
+    <!--SIDEBAR-->
+    <div class="sidebar">
+        <ul>
+            <li><i class="fas fa-dollar-sign white"></i><a href="">Balance</a></li>
+            <li><i class="fas fa-chart-area white"></i><a href="">Dashboard</a></li>
+            <li><i class="fas fa-signal white"></i><a href="">Base stations</a></li>
+            <li><i class="fas fa-cubes white"></i><a href="">My projects</a></li>
+            <li><i class="fas fa-cog white"></i><a href="">Settings</a></li>
+        </ul>
+    </div>
+
+    <div class="right-list">
     <!-- HEADER AND CURRENCY COUNT -->
     <div class="panel">
-        <h1>Total Currencies <span class="label label-info">{{ currencies.length }}</span></h1>
+        <h1>Liste des crypto-monnaies</h1>
     </div>
 
     <!-- SEARCH CURRENCY -->
     <input placeholder="Rechercher une crypto-monnaie..." ng-model="searchCurrency">
 
     <!-- CURRENCY LIST -->
-    <div>
-        <ul>
-            <li ng-repeat="currency in currencies | filter: {'name':searchCurrency}" style="cursor: pointer;" ng-click="viewCurrency(currency.symbol)">
-            <b>Nom</b> : {{ currency.name}} <br>
-            <b>Rang</b> : {{ currency.rank }} <br>
-            <!-- <img check-image ng-src="{{ currency.img }}"> -->
-            <b>Prix (USD)</b> : {{ currency.cmc_price_usd }} <br>
-            <b>Prix (EUR)</b> : {{ currency.price_eur }} <br>
-            <b>Changement sur 1h</b> : {{ currency.percent_change_1h }} %<br>
-            <b>Changement sur 24h</b> : {{ currency.percent_change_24h }} % <br>
-            <b>Changement sur 7 jours</b> : {{ currency.percent_change_7d }} % <br>
-            </li>
-        </ul>
+    <div class="list-container">
+      <div class="currency-card" ng-repeat="currency in currencies | filter: {'name':searchCurrency}" style="cursor: pointer;" ng-click="viewCurrency(currency.symbol)">
+          <div class="currency-more">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+          </div>
+        <img check-image="http://google.com/favicon.ico" ng-src="{{ currency.img }}" class="symbol-currency">
+        <div class="currency-header">
+            <span class="currency-name">{{ currency.name}}</span> <br>
+            <span class="currency-rank">Rang : {{ currency.rank }} </span><br>
+        </div><br/><br/>
+        <b>Prix (USD)</b> : {{ currency.cmc_price_usd }} <br>
+        <b>Prix (EUR)</b> : {{ currency.price_eur }} <br>
+        <b>Changement sur 1h</b> : {{ currency.percent_change_1h }} %<br>
+        <b>Changement sur 24h</b> : {{ currency.percent_change_24h }} % <br>
+        <b>Changement sur 7 jours</b> : {{ currency.percent_change_7d }} % <br>
+      </div>
     </div>
-
+    </div>
 </div>

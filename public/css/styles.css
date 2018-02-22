@@ -145,6 +145,8 @@ body {
 
 .title.center-border {
 	width: max-content;
+	width: -moz-max-content;
+	width: -webkit-max-content;
 }
 
 .title.left-border {
@@ -173,6 +175,7 @@ body {
 	font-family: 'Montserrat', serif;
 	font-weight: 600;
 	cursor: pointer;
+	background-color: transparent;
 }
 
 .main-button:hover {
