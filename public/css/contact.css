@@ -39,13 +39,15 @@
     margin-left: 50px;
 }
 
-.contact-form-left .form-group {
+.contact-form-left 
+.form-group {
     position: relative;
     margin-top: 2.5rem;
     margin-bottom: 4.8rem;
 }
 
-.contact-form-right .form-group {
+.contact-form-right 
+.form-group {
     position: relative;
     margin-top: 2.5rem;
     margin-bottom: 2.25rem;
@@ -55,7 +57,8 @@
     height: 1.9rem;
 }
 
-.form-group .control-label {
+.form-group 
+.control-label {
     position: absolute;
     top: 0.25rem;
     pointer-events: none;
@@ -70,13 +73,15 @@
     transition: all 0.28s ease;
 }
 
-.form-group .bar {
+.form-group 
+.bar {
     position: relative;
     border-bottom: 0.0625rem solid #3B4589;
     display: block;
 }
 
-.form-group .bar::before {
+.form-group 
+.bar::before {
     content: '';
     height: 0.125rem;
     width: 0;
@@ -99,7 +104,6 @@
     border-color: transparent;
     line-height: 1.9;
     width: 100%;
-    color: transparent;
     -webkit-transition: all 0.28s ease;
     transition: all 0.28s ease;
     -webkit-box-shadow: none;
@@ -150,17 +154,18 @@
     display: block;
 }
 
-#message {
+#contactMsg {
     resize: none;
     background-color: #ffffff !important;
     box-shadow: 0px 1px 8px #00000012;
     padding: 5px 15px;
     border-radius: 5px;
-    font-size: 14px;
-    margin-top: 50px;
+    font-size: 1rem;
+    margin-top: 58px;
+    font-family: 'Montserrat', serif;
 }
 
-#message:focus {
+#contactMsg:focus {
     box-shadow: 0px 1px 8px #00000024;
 }
 
@@ -191,4 +196,23 @@
     .line-right {
         display: none;
     }
+}
+
+/**
+* Form contact errors
+*/
+
+.form-group {
+  position: relative;
+}
+
+.input-error {
+    position: absolute;
+    color: #e01d1d;
+    right: 0px;
+    bottom: -25px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    font-family: 'Montserrat', serif;
+    font-weight: 300;
 }
