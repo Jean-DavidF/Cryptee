@@ -1,19 +1,17 @@
-<div class="wrapper">
+<div class="wrapper dashboard">
 
 	<sidebar></sidebar>
+	<div>
+		<div class="currency-title">
+			<img check-image ng-src="{{ currency.img }}">
+	        <h1>{{ currency.name}}</h1>
+	        <span>Rang</span> {{ currency.rank }}
+    	</div>
+        <b>Prix (USD)</b> : {{ currency.cmc_price_usd }} <br>
+        <!-- <b>Prix (EUR)</b> : {{ currency.cmc_price_eur }} <br> -->
+        <b>Changement sur 1h</b> : {{ currency.percent_change_1h }} %<br>
+        <b>Changement sur 24h</b> : {{ currency.percent_change_24h }} % <br>
+        <b>Changement sur 7 jours</b> : {{ currency.percent_change_7d }} % <br>
 
-	<h1>Page de la crypto-monnaie : {{ currency.name }}</h1>
-
-	<ul>
-		<li>
-			<!-- <img check-image ng-src="{{ currency.img }}"><br> -->
-	        <b>Nom</b> : {{ currency.name}} <br>
-	        <b>Rang</b> : {{ currency.rank }} <br>
-	        <b>Prix (USD)</b> : {{ currency.cmc_price_usd }} <br>
-	        <!-- <b>Prix (EUR)</b> : {{ currency.cmc_price_eur }} <br> -->
-	        <b>Changement sur 1h</b> : {{ currency.percent_change_1h }} %<br>
-	        <b>Changement sur 24h</b> : {{ currency.percent_change_24h }} % <br>
-	        <b>Changement sur 7 jours</b> : {{ currency.percent_change_7d }} % <br>
-	    </li>
-	</ul>
+	</div>
 </div>

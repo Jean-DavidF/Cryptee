@@ -1,0 +1,10 @@
+.currency-title {
+	flex-basis: 100%;
+	background-color: #fff;
+	box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.2);
+}
+
+.currency-title img {
+	width: 30px;
+	height: 30px;
+}

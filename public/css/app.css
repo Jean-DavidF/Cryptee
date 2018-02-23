@@ -1,4 +1,4 @@
-.app-page {
+.dashboard {
   background-color: #f9f9f9;
   display: flex;
   padding-left: 180px;
@@ -12,21 +12,25 @@
   background-color: #485190;
   position: fixed;
   padding-top: 20px;
+  overflow: hidden;
 }
 
 .sidebar ul li {
   list-style: none;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 30px;
 }
 
 .sidebar ul li a {
+  display: inline-block;
   color: #FFFFFF;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  margin-left: 5px;
+  padding: 20px 0 20px 30px;
+  width: 100%;
+}
+
+.sidebar ul li a i {
+  margin-right: 10px;
 }
 
 .sidebar ul li:hover {
@@ -37,6 +41,7 @@
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 0 20px;
 }
 
 .currency-more {
@@ -67,6 +72,24 @@
   -o-transform: scale(1);
   transform: scale(1);
   position: relative;
+}
+
+@media screen and (max-width: 1080px){
+  .currency-card {
+    flex-basis: 30%;
+  }
+}
+
+@media screen and (max-width: 850px){
+  .currency-card {
+    flex-basis: 45%;
+  }
+}
+
+@media screen and (max-width: 620px){
+  .currency-card {
+    flex-basis: 100%;
+  }
 }
 
 .currency-card:hover {
