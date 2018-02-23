@@ -1,7 +1,7 @@
 var crypteeApp = angular.module('crypteeApp', ['ui.router', 'chart.js']);
 
 crypteeApp.config(function($stateProvider, $urlRouterProvider) {
-    
+
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
@@ -63,4 +63,3 @@ function MainController($route, $routeParams, $location) {
 }
 
 angular.module('crypteeApp').controller('MainController', ['$route', '$routeParams', '$location', MainController ]);
-
