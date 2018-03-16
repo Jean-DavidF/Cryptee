@@ -37,6 +37,10 @@
   background-color: #5963A5;
 }
 
+.right-list {
+  padding-left: 180px;
+}
+
 .list-container {
   display: inline-flex;
   flex-wrap: wrap;
