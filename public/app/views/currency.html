@@ -22,10 +22,10 @@
 	        <b>Changement sur 1h</b> : {{ currency.percent_change_1h }} %<br>
 	        <b>Changement sur 24h</b> : {{ currency.percent_change_24h }} % <br>
 	        <b>Changement sur 7 jours</b> : {{ currency.percent_change_7d }} % <br>
+					<div style="width: 100%">
+						<graphic-line-chart datas="chartPrices" labels="chartDates" options="options" series="series_line_chart" colors="colors_reactive_chart"></graphic-line-chart>
+					</div>
 	    </div>
-		<div style="width: 100%">
-			<graphic-line-chart datas="chartPrices" labels="chartDates" options="options" series="series_line_chart" colors="colors_reactive_chart"></graphic-line-chart>
-		</div>
 	</div>
 
 	</div>

@@ -25,9 +25,6 @@ function CurrencyController($scope, currencyFactory, $location) {
 				$scope.chartPrices = [ ];
 				$scope.chartPrices.push($scope.allPrices);
 
-				console.log($scope.chartPrices);
-				console.log($scope.chartDates);
-
 		});
 
 		//Paramètres du Line Chart
