@@ -24,11 +24,11 @@
             <span class="currency-name">{{ currency.name}}</span> <br>
             <span class="currency-rank">Rang : {{ currency.rank }} </span><br>
         </div><br/><br/>
-        <b>Prix (USD)</b> : {{ currency.cmc_price_usd }} <br>
-        <b>Prix (EUR)</b> : {{ currency.price_eur }} <br>
-        <b>Changement sur 1h</b> : {{ currency.percent_change_1h }} %<br>
-        <b>Changement sur 24h</b> : {{ currency.percent_change_24h }} % <br>
-        <b>Changement sur 7 jours</b> : {{ currency.percent_change_7d }} % <br>
+        <span class="infos_currency usd_price">Prix (USD)</span> : {{ currency.cmc_price_usd }} <br>
+        <span class="infos_currency euro_price">Prix (EUR)</span> : {{ currency.price_eur }} <br>
+        <span class="infos_currency change_1h">Changement sur 1h</span> : {{ currency.percent_change_1h }} %<br>
+        <span class="infos_currency change_24h">Changement sur 24h</span> : {{ currency.percent_change_24h }} % <br>
+        <span class="infos_currency change_7j">Changement sur 7 jours</span> : {{ currency.percent_change_7d }} % <br>
       </div>
     </div>
     </div>

@@ -1,17 +1,27 @@
 <div class="wrapper dashboard">
 
 	<sidebar></sidebar>
-	<div>
+	<div class="content-currency">
 		<div class="currency-title">
 			<img check-image ng-src="{{ currency.img }}">
 	        <h1>{{ currency.name}}</h1>
-	        <span>Rang</span> {{ currency.rank }}
+	        <span>Rang {{ currency.rank }}</span>
     	</div>
-        <b>Prix (USD)</b> : {{ currency.cmc_price_usd }} <br>
-        <!-- <b>Prix (EUR)</b> : {{ currency.cmc_price_eur }} <br> -->
-        <b>Changement sur 1h</b> : {{ currency.percent_change_1h }} %<br>
-        <b>Changement sur 24h</b> : {{ currency.percent_change_24h }} % <br>
-        <b>Changement sur 7 jours</b> : {{ currency.percent_change_7d }} % <br>
-
+    	<div class="price">
+    		<div class="price-USD price-value">
+    			<span>Prix (USD)</span>
+    			{{ currency.cmc_price_usd }}
+    		</div>
+    		<div class="vertical-line"></div>
+    		<div class="price-EUR price-value">
+    			<span>Prix (EUR)</span>
+    			{{ currency.cmc_price_usd }}
+    		</div>
+    	</div>
+    	<div class="charts">
+	        <b>Changement sur 1h</b> : {{ currency.percent_change_1h }} %<br>
+	        <b>Changement sur 24h</b> : {{ currency.percent_change_24h }} % <br>
+	        <b>Changement sur 7 jours</b> : {{ currency.percent_change_7d }} % <br>
+	    </div>
 	</div>
 </div>
