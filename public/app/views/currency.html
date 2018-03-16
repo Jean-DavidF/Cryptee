@@ -3,7 +3,7 @@
 	<sidebar></sidebar>
 	<div class="content-currency">
 		<div class="currency-title">
-			<img check-image ng-src="{{ currency.img }}">
+					<img check-image ng-src="{{ currency.img }}">
 	        <h1>{{ currency.name}}</h1>
 	        <span>Rang {{ currency.rank }}</span>
     	</div>
@@ -23,5 +23,10 @@
 	        <b>Changement sur 24h</b> : {{ currency.percent_change_24h }} % <br>
 	        <b>Changement sur 7 jours</b> : {{ currency.percent_change_7d }} % <br>
 	    </div>
+		<div style="width: 100%">
+			<graphic-line-chart datas="chartPrices" labels="chartDates" options="options" series="series_line_chart" colors="colors_reactive_chart"></graphic-line-chart>
+		</div>
+	</div>
+
 	</div>
 </div>
