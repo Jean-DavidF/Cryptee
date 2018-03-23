@@ -2,17 +2,26 @@
   background-color: #f9f9f9;
   display: flex;
   padding-left: 180px;
+  transition: all 130ms ease-in-out;
+  -webkit-transition: all 130ms ease-in-out;
+  -moz-transition: all 130ms ease-in-out;
+  -o-transition: all 130ms ease-in-out;
 }
 
 .sidebar {
   top: 60px;
-  left: 0;
+  left: 0 !important;
   bottom: 0;
   width: 180px;
   background-color: #485190;
   position: fixed;
   padding-top: 20px;
   overflow: hidden;
+  transition: all 130ms ease-in-out;
+  -webkit-transition: all 130ms ease-in-out;
+  -moz-transition: all 130ms ease-in-out;
+  -o-transition: all 130ms ease-in-out;
+  z-index: 9;
 }
 
 .sidebar ul li {
@@ -39,6 +48,10 @@
 
 .right-list {
   padding-left: 180px;
+  transition: all 130ms ease-in-out;
+  -webkit-transition: all 130ms ease-in-out;
+  -moz-transition: all 130ms ease-in-out;
+  -o-transition: all 130ms ease-in-out;
 }
 
 .list-container {
@@ -125,4 +138,26 @@
 .currency-rank {
   font-family: "Roboto", sans-serif;
   font-size: 10px;
+}
+
+@media screen and (max-width: 968px) {
+  .right-list {
+    padding-left: 0;
+  }
+
+  .dashboard {
+    padding-left: 0;
+  }
+
+  .sidebar {
+    left: -190px !important;
+  }
+}
+
+.toSlideShow {
+  left: 0 !important;
+}
+
+.toSlideHide {
+  left: -190px !important;
 }
