@@ -30,6 +30,9 @@
 }
 
 .price {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
 	width: 30%;
 	background-color: #fff;
 	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
@@ -39,11 +42,13 @@
 }
 
 .price-value {
-	display: inline-block;
+	text-align: center;
 }
 
 .vertical-line {
-	display: inline-block;
+	width: 1px;
+	height: 70%;
+	background-color: lightgrey;
 }
 
 .charts {
