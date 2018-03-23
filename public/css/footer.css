@@ -8,6 +8,10 @@
     font-weight: 300;
 }
 
+.footer-dashboard {
+  padding-left: 180px;
+}
+
 .footer .rights {
     float: right;
     margin-right: 25px;
