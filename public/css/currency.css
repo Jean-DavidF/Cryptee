@@ -45,6 +45,11 @@
 	text-align: center;
 }
 
+.price-data {
+	color: #000000;
+	font-weight: bold;
+}
+
 .vertical-line {
 	width: 1px;
 	height: 70%;

@@ -91,6 +91,60 @@
   position: relative;
 }
 
+.price-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 0 7px;
+}
+
+.price-content {
+  text-align: center;
+  color: #6A7088;
+}
+
+.horizontal-line {
+  width: 90%;
+  height: 1px;
+  background-color: lightgrey;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.changement {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  color: #000000;
+  font-weight: bold;
+}
+
+.hours-changement {
+  display: flex;
+  margin-top: 15px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.hours-changement div {
+  text-align: center;
+}
+
+.hours-changement div span {
+  font-size: 12px;
+}
+
+.hours-changement div span:nth-child(1) {
+  color: #6A7088;
+}
+
 @media screen and (max-width: 1080px){
   .currency-card {
     flex-basis: 30%;
