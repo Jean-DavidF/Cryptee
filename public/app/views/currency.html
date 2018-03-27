@@ -3,28 +3,44 @@
 	<sidebar></sidebar>
 	<div class="content-currency">
 		<div class="currency-title">
-					<img check-image="../img/coin.png" ng-src="{{ currency.img }}">
-	        <h1>{{ currency.name}}</h1>
-	        <span>Rang {{ currency.rank }}</span>
+			<div class="left-title">
+				<img check-image="../img/coin.png" ng-src="{{ currency.img }}">
+				<h1>{{ currency.name}}</h1>
+			</div>
+			<div class="right-title">
+				<span>Rang {{ currency.rank }}</span>
+			</div>
     	</div>
     	<div class="price">
     		<div class="price-USD price-value">
     			<span>Prix (USD)</span><br/><br/>
-				<span class="price-data">{{ currency.cmc_price_usd }}</span>
+				<span class="price-data">$ {{ currency.cmc_price_usd }}</span>
     		</div>
     		<div class="vertical-line"></div>
     		<div class="price-EUR price-value">
     			<span>Prix (EUR)</span><br/><br/>
-				<span class="price-data">{{ currency.cmc_price_usd }}</span>
+				<span class="price-data">€ {{ currency.cmc_price_usd }}</span>
     		</div>
     	</div>
     	<div class="charts">
-	        <b>Changement sur 1h</b> : {{ currency.percent_change_1h }} %<br>
-	        <b>Changement sur 24h</b> : {{ currency.percent_change_24h }} % <br>
-	        <b>Changement sur 7 jours</b> : {{ currency.percent_change_7d }} % <br>
-					<div style="width: 100%">
-						<graphic-line-chart datas="chartPrices" labels="chartDates" options="options" series="series_line_chart" colors="colors_reactive_chart"></graphic-line-chart>
-					</div>
+			<span class="infos_currency changement">Changement</span>
+			<div class="hours-changement">
+				<div>
+					<span>Sur 1h</span><br/>
+					<span>{{ currency.percent_change_1h }}%</span>
+				</div>
+				<div>
+					<span>Sur 24h</span><br/>
+					<span>{{ currency.percent_change_24h }}%</span>
+				</div>
+				<div>
+					<span>Sur 7j</span><br/>
+					<span>{{ currency.percent_change_7d }}%</span>
+				</div>
+			</div>
+			<div style="width: 100%;">
+				<graphic-line-chart datas="chartPrices" labels="chartDates" options="options" series="series_line_chart" colors="colors_reactive_chart"></graphic-line-chart>
+			</div>
 	    </div>
 	</div>
 	</div>

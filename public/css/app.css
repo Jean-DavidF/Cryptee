@@ -169,6 +169,18 @@
   }
 }
 
+@media screen and (max-width: 800px) {
+  .price {
+    float: none;
+    width: 100%;
+  }
+
+  .charts {
+    float: none;
+    width: 100%;
+  }
+}
+
 .currency-card:hover {
   -webkit-transform: scale(1.02);
   -moz-transform: scale(1.02);
