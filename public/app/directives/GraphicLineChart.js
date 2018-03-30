@@ -6,7 +6,19 @@ function graphicLineChart() {
 			legend: {
 				display: true,
 				position: "bottom"
-			}
+			},
+			scales: {
+      	xAxes: [{
+        	gridLines: {
+          	display: false
+          }
+        }],
+        yAxes: [{
+          gridLines: {
+          	display: true
+          }
+        }]
+      }
 		};
 	}
 

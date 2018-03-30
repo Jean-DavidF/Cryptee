@@ -23,6 +23,19 @@
     		</div>
     	</div>
     	<div class="charts">
+
+			<div class="select-period">
+				<select class="selectPeriod" ng-change="updateFilter()" ng-model="selectPeriod">
+					<option value="">Général</option>
+					<option value="7">7 derniers jours</option>
+					<option value="30" ng-selected="true">30 derniers jours</option>
+					<option value="91.25">3 derniers mois</option>
+					<option value="182.5">6 derniers mois</option>
+					<option value="365">12 derniers mois</option>
+					<option value="730">2 dernières années</option>
+				</select>
+			</div>
+
 			<span class="infos_currency changement">Changement</span>
 			<div class="hours-changement">
 				<div>
