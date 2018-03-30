@@ -6,10 +6,9 @@
     <!-- HEADER AND CURRENCY COUNT -->
     <div class="panel">
         <h1>Liste des crypto-monnaies</h1>
+        <!-- SEARCH CURRENCY -->
+        <input placeholder="Rechercher une crypto-monnaie..." ng-model="searchCurrency">
     </div>
-
-    <!-- SEARCH CURRENCY -->
-    <input placeholder="Rechercher une crypto-monnaie..." ng-model="searchCurrency">
 
     <!-- CURRENCY LIST -->
     <div class="list-container">
@@ -26,28 +25,27 @@
         </div>
           <div class="price-container">
               <div class="price-content">
-                  <span>Prix (USD)</span><br/><br/>
+                  <span>Prix (USD)</span>
                   <span class="price-data">$ {{ currency.cmc_price_usd }}</span>
               </div>
               <div class="price-content">
-                  <span>Prix (EUR)</span><br/><br/>
-                  <span class="price-data">€ {{ currency.cmc_price_usd }}</span>
+                  <span>Prix (EUR)</span>
+                  <span class="price-data">€ {{ currency.cmc_price_eur }}</span>
               </div>
           </div>
           <div class="horizontal-line"></div>
-        <span class="infos_currency changement">Changement</span>
           <div class="hours-changement">
               <div>
                   <span>Sur 1h </span><br/>
-                  <span>{{ currency.percent_change_1h }}%</span>
+                  <span class="{{ currency.percent_change_1h > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_1h }}%</span>
               </div>
               <div>
                   <span>Sur 24h </span><br/>
-                  <span>{{ currency.percent_change_24h }}%</span>
+                  <span class="{{ currency.percent_change_24h > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_24h }}%</span>
               </div>
               <div>
                   <span>Sur 7j </span><br/>
-                  <span>{{ currency.percent_change_7d }}%</span>
+                  <span class="{{ currency.percent_change_7d > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_7d }}%</span>
               </div>
           </div>
       </div>

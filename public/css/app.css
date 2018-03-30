@@ -1,3 +1,22 @@
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.panel input {
+  border: none;
+  padding: 10px;
+  color: #F9F9F9;
+  border-bottom: 1px solid #F9F9F9;
+}
+
+.panel input:focus {
+  outline: 0;
+  border-bottom: 1px solid #485190;
+}
+
 .dashboard {
   background-color: #f9f9f9;
   display: flex;
@@ -106,6 +125,11 @@
   color: #6A7088;
 }
 
+.price-content span:first-child {
+  display: block;
+  margin: 0 0 10px 0;
+}
+
 .price-data {
   font-size: 14px;
 }
@@ -117,16 +141,6 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-}
-
-.changement {
-  display: block;
-  margin-top: 10px;
-  font-size: 12px;
-  width: 100%;
-  text-align: center;
-  color: #000000;
-  font-weight: bold;
 }
 
 .hours-changement {
@@ -144,11 +158,18 @@
 
 .hours-changement div span {
   font-size: 12px;
-  color: #BA8EE0;
 }
 
 .hours-changement div span:nth-child(1) {
   color: #6A7088;
+}
+
+.positive-value {
+  color: #0dda20;
+}
+
+.negative-value {
+  color: #e80606;
 }
 
 @media screen and (max-width: 1080px){
