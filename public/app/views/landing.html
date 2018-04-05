@@ -1,0 +1,71 @@
+<div class="wrapper">
+	<div id="banner_landingpage">
+		<h1>L’avenir de la crypto-monnaie dépend de vous !</h1>
+		<img src="../img/line-header.svg" alt="dashboard">
+	</div>
+	<div class="container" style="padding-top: 290px">
+		<img src="../img/dashboard_homepage.svg" alt="dashboard" class="presentation-img">
+		<h2 class="title center-border">Un dashboard qui vous facilitera la vie</h2>
+		<p class="text center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at quam vitae ipsum gravida fringilla at vitae dui. Vestibulum mattis in libero eu dapibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam sit amet nunc a orci pretium ultricies. Vivamus pretium sapien quis tempor sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at quam vitae ipsum gravida fringilla at vitae dui. Vestibulum mattis in libero eu dapibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam sit amet nunc a orci pretium ultricies. Vivamus pretium sapien quis tempor sagittis.</p>
+		<div class="button-container">
+			<a href="" class="main-button">Découvrir</a>
+		</div>
+	</div>
+	<div id="subpresentation-dashboard">
+		<div class="subpresentation-text" style="width: 80%;margin: 0 auto;">
+			<h2 class="title left-border">Suivez le cours de toutes vos crypto monnaies</h2>
+			<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at quam vitae ipsum gravida fringilla at vitae dui. Vestibulum mattis in libero eu dapibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam sit amet nunc a orci pretium ultricies. Vivamus pretium sapien quis tempor sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at quam vitae ipsum gravida fringilla at vitae dui. Vestibulum mattis in libero eu dapibus.</p>
+		</div>
+		<div class="info-crypto">
+			<div class="background-info">
+				<div class="list-container" style="width: 100%; margin-bottom: 0px;">
+					<div class="currency-card-info" ng-repeat="currency in currencies | filter: {'name':searchCurrency}" style="cursor: pointer;" ng-click="viewCurrency(currency.symbol)">
+							<div class="currency-more">
+									<div class="dot"></div>
+									<div class="dot"></div>
+									<div class="dot"></div>
+							</div>
+						<img check-image="../img/coin.png" ng-src="{{ currency.img }}" class="symbol-currency">
+						<div class="currency-header">
+								<span class="currency-name">{{ currency.name}}</span> <br>
+								<span class="currency-rank">Rang : {{ currency.rank }} </span><br>
+						</div>
+							<div class="price-container">
+									<div class="price-content">
+											<span>Prix (USD)</span>
+											<span class="price-data">$ {{ currency.cmc_price_usd }}</span>
+									</div>
+									<div class="price-content">
+											<span>Prix (EUR)</span>
+											<span class="price-data">€ {{ currency.cmc_price_eur }}</span>
+									</div>
+							</div>
+							<div class="horizontal-line"></div>
+							<div class="hours-changement">
+									<div>
+											<span>Sur 1h </span><br/>
+											<span class="{{ currency.percent_change_1h > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_1h }}%</span>
+									</div>
+									<div>
+											<span>Sur 24h </span><br/>
+											<span class="{{ currency.percent_change_24h > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_24h }}%</span>
+									</div>
+									<div>
+											<span>Sur 7j </span><br/>
+											<span class="{{ currency.percent_change_7d > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_7d }}%</span>
+									</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="top-footer">
+		<div class="container">
+			<h2 class="title left-border white">Consultez l’évolution d’une monnaie depuis sa création</h2>
+			<p class="text white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at quam vitae ipsum gravida fringilla at vitae dui. Vestibulum mattis in libero eu dapibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam sit amet nunc a orci pretium ultricies. Vivamus pretium sapien quis tempor sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at quam vitae ipsum gravida fringilla at vitae dui. Vestibulum mattis in libero eu dapibus.</p>
+		</div>
+		<img src="../img/footer-line.svg" alt="line" class="footer-line">
+	</div>
+</div>

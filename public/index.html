@@ -3,15 +3,26 @@
 <head>
     <!-- META -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no">
 
     <title>Cryptee</title>
 
     <!-- CSS -->
-    
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/navbar_top.css">
-
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/landing_page.css">
+    <link rel="stylesheet" href="css/project.css">
+    <link rel="stylesheet" href="css/team-page.css">
+    <link rel="stylesheet" href="css/currency.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/notification.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <!-- JS -->
 
     <script src="js/lib/angular.js"></script>
@@ -21,31 +32,58 @@
     <script src="js/lib/angular-chart.js/dist/angular-chart.min.js"></script>
     <script src="js/lib/angular-locale_fr-fr.js"></script>
     <script src="app.js"></script>
+    <script src="js/functions.js"></script>
+    <!-- <script src="js/team-page.js"></script> -->
 
     <!-- Controllers -->
 
+    <script src="app/controllers/LandingController.js"></script>
     <script src="app/controllers/AppController.js"></script>
     <script src="app/controllers/ProjectController.js"></script>
+    <script src="app/controllers/TeamController.js"></script>
+    <script src="app/controllers/CurrencyController.js"></script>
+    <script src="app/controllers/ContactController.js"></script>
     <script src="app/controllers/NavbarTopController.js"></script>
+    <script src="app/controllers/NavbarTopDashboardController.js"></script>
+    <script src="app/controllers/FooterController.js"></script>
+    <script src="app/controllers/FooterDashboardController.js"></script>
+    <script src="app/controllers/SidebarController.js"></script>
 
     <!-- Factories -->
 
     <script src="app/factories/CurrenciesFactory.js"></script>
+    <script src="app/factories/CurrencyFactory.js"></script>
 
     <!-- Directives -->
 
     <script src="app/directives/NavbarTop.js"></script>
+    <script src="app/directives/NavbarTopDashboard.js"></script>
+    <script src="app/directives/Footer.js"></script>
+    <script src="app/directives/FooterDashboard.js"></script>
+    <script src="app/directives/CheckImage.js"></script>
+    <script src="app/directives/Sidebar.js"></script>
+    <script src="app/directives/GraphicLineChart.js"></script>
+
+    <!-- Services -->
+
+    <script src="app/services/NotificationService.js"></script>
 
 </head>
     <!-- apply our angular app to our site -->
 <body ng-app="crypteeApp">
 
     <!-- NAVIGATION -->
-    <navbar-top></navbar-top>
+    <navbar-top ng-show="!isDashboard()"></navbar-top>
+    <navbar-top-dashboard ng-show="isDashboard()"></navbar-top-dashboard>
+
+    <div id="notificationPinPoint"></div>
 
     <!-- MAIN CONTENT -->
     <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
     <div ui-view autoscroll="false" class="main"></div>
 
+    <!-- FOOTER -->
+    <footer ng-show="!isDashboard()"></footer>
+    <footer-dashboard ng-show="isDashboard()"></footer-dashboard>
 </body>
 </html>

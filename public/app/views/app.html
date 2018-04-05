@@ -1,17 +1,57 @@
-<div class="wrapper">
+<div class="wrapper app-page">
 
+    <sidebar></sidebar>
+
+    <div class="right-list">
     <!-- HEADER AND CURRENCY COUNT -->
     <div class="panel">
-        <h1>Total Currencies <span class="label label-info">{{ currencies.length }}</span></h1>
+        <h1>Liste des crypto-monnaies</h1>
+        <!-- SEARCH CURRENCY -->
+        <div class="form-group">
+          <input placeholder="Rechercher une crypto-monnaie..." ng-model="searchCurrency">
+          <i class="bar"></i>
+        </div>
     </div>
     
     <!-- CURRENCY LIST -->
-    <div>
-
-        <ul ng-repeat="currency in currenciesFactory.currencies">
-            <li style="cursor: pointer;" ng-click="removeCurrency(currency, $index)"><b>Nom</b> : {{ currency.name }} / <b>Valeur</b> : {{ currency.value }} $</li>
-        </ul>
-
+    <div class="list-container app-list-container">
+      <div class="currency-card" ng-repeat="currency in currencies | filter: {'name':searchCurrency}" style="cursor: pointer;" ng-click="viewCurrency(currency.symbol)">
+          <div class="currency-more">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+          </div>
+        <img check-image="../img/coin.png" ng-src="{{ currency.img }}" class="symbol-currency">
+        <div class="currency-header">
+            <span class="currency-name">{{ currency.name}}</span> <br>
+            <span class="currency-rank">Rang : {{ currency.rank }} </span><br>
+        </div>
+          <div class="price-container">
+              <div class="price-content">
+                  <span>Prix (USD)</span>
+                  <span class="price-data">$ {{ currency.cmc_price_usd }}</span>
+              </div>
+              <div class="price-content">
+                  <span>Prix (EUR)</span>
+                  <span class="price-data">€ {{ currency.cmc_price_eur }}</span>
+              </div>
+          </div>
+          <div class="horizontal-line"></div>
+          <div class="hours-changement">
+              <div>
+                  <span>Sur 1h </span><br/>
+                  <span class="{{ currency.percent_change_1h > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_1h }}%</span>
+              </div>
+              <div>
+                  <span>Sur 24h </span><br/>
+                  <span class="{{ currency.percent_change_24h > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_24h }}%</span>
+              </div>
+              <div>
+                  <span>Sur 7j </span><br/>
+                  <span class="{{ currency.percent_change_7d > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_7d }}%</span>
+              </div>
+          </div>
+      </div>
     </div>
 
     <!-- FORM TO CREATE CURRENCIES -->
@@ -19,13 +59,12 @@
         <form>
             <div>
                 <!-- BIND THIS VALUE TO formData.name IN ANGULAR -->
-                <input type="text" style="display: block; width: 250px;" placeholder="Nom de la crypto-monnaie" ng-model="newCurrency.name">
-                <input type="number" style="display:block; width: 250px;" placeholder="Valeur actuelle de la crypto-monnaie" ng-model="newCurrency.value">
+                <input type="text" style="display: block; width: 250px;" placeholder="Nom de la crypto-monnaie" ng-model="formData.name">
+                <input type="number" style="display:block; width: 250px;" placeholder="Valeur actuelle de la crypto-monnaie" ng-model="formData.value">
             </div>
 
             <!-- createToDo() WILL CREATE NEW TODOS -->
-            <button type="submit" ng-click="addCurrency()">Create</button>
+            <button type="submit" ng-click="createCurrency()">Create</button>
         </form>
     </div>
-
 </div>

@@ -1,44 +1,26 @@
-function AppController($scope, currenciesFactory, $location) {
-    $scope.newCurrency = {
-        name: '',
-        value: '',
-    };
-
-    $scope.toRemove = {
-        currency: null,
-        index: -1
-    };
-
+function AppController($scope, currenciesFactory, $location, $http, $state) {
     $scope.currencies = [ ];
+    $scope.searchCurrency = '';
 
     $scope.currenciesFactory = currenciesFactory;
 
-    // Permet de créer une Currency (devise) -> lié à la factory
-    $scope.addCurrency = function() {
-        currenciesFactory.create($scope.newCurrency.name, $scope.newCurrency.value);
-
-        currenciesFactory.get(function(currencies) {
-            $scope.currencies = currencies;
-        });
-
-        //On reset les valeurs
-        $scope.newCurrency.name = '';
-        $scope.newCurrency.value = '';
-    };
-
-    // delete a currency after checking it
-    $scope.removeCurrency = function(currency, $index) {
-        $scope.toRemove = { currency: currency, index: $index };
-        currenciesFactory.remove($scope.toRemove.currency, $scope.toRemove.index);
-
-        currenciesFactory.get(function(currencies) {
-            $scope.currencies = currencies;
-        });
-    };
-
-    currenciesFactory.get(function(currencies) {
-        $scope.currencies = currencies;
+    currenciesFactory.getCurrencies(function(data) {
+        $scope.currencies = data;
     });
+
+    var AllCurrenciesInterval = setInterval(function(){
+        if ('/dashboard' === $location.path()) {
+            currenciesFactory.getCurrencies(function(data) {
+                $scope.currencies = data;
+            });
+        } else {
+            clearInterval(AllCurrenciesInterval);
+        }
+    }, 60000);
+
+    $scope.viewCurrency = function(Id) {
+        $state.go('currency', {CoinId : Id});
+    };
 }
 
-crypteeApp.controller('AppController', ['$scope', 'currenciesFactory', '$location', AppController]);
+crypteeApp.controller('AppController', ['$scope', 'currenciesFactory', '$location', '$http', '$state', AppController]);

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 223 220" style="enable-background:new 0 0 223 220;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#FFFFFF;}
+	.st2{font-family:'Avenir-Heavy';}
+	.st3{font-size:178.2077px;}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="31.4752" y1="35.9007" x2="185.7703" y2="179.6692">
+	<stop  offset="0" style="stop-color:#5EE7F5"/>
+	<stop  offset="0.6179" style="stop-color:#7E71C6"/>
+	<stop  offset="0.9944" style="stop-color:#9227A8"/>
+</linearGradient>
+<path class="st0" d="M186,210H36c-13.8,0-25-11.2-25-25V35c0-13.8,11.2-25,25-25h150c13.8,0,25,11.2,25,25v150
+	C211,198.8,199.8,210,186,210z"/>
+<text transform="matrix(1 0 0 1 46.9287 171.8818)" class="st1 st2 st3">C</text>
+</svg>
