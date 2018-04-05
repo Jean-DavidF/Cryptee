@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
+  position: relative;
+  bottom: -20px;
 }
 
 .panel input {
@@ -78,6 +80,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0 20px;
+  margin-bottom: 40px;
 }
 
 .currency-more {
@@ -145,10 +148,10 @@
 
 .hours-changement {
   display: flex;
-  margin-top: 15px;
+  margin: 25px 0;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   font-size: 14px;
 }
 
@@ -157,7 +160,7 @@
 }
 
 .hours-changement div span {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .hours-changement div span:nth-child(1) {
@@ -253,4 +256,101 @@
 
 .toSlideHide {
   left: -190px !important;
+}
+
+.select-styling {
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 0 2em;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 1px 1px 7px 1px #00000014;
+}
+
+.select-styling:hover {
+  border-color: #999;
+}
+
+.select-styling:after {
+  content: '';
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+  right: 18px;
+  bottom: 20px;
+  display: block;
+  width: 13px;
+  height: 13px;
+  border: 2px solid white;
+  border-top: none;
+  border-right: none;
+  z-index: -1;
+}
+
+.select-styling:before {
+  content: '';
+  color: #333;
+  display: block;
+  font-size: 1em;
+  height: 100%;
+  line-height: 2.5em;
+  padding: 0 0.625em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #28306a;
+  text-align: center;
+  width: 50px;
+  z-index: -1;
+}
+
+.period-label {
+    display: block;
+    margin: 20px 0 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.select-styling select {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0 none;
+  box-shadow: none;
+  color: #333;
+  display: block;
+  font-size: 100%;
+  line-height: normal;
+  margin: 0;
+  padding: 1em;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select-styling select::-ms-expand {
+  display: none;
+  /* to ie 10 */
+}
+
+.select-styling select:focus {
+  outline: none;
+}
+
+:-moz-any(.select-styling):before,
+:-moz-any(.select-styling):after {
+  pointer-events: none;
+  z-index: 1;
 }
