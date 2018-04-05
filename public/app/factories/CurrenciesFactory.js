@@ -1,4 +1,3 @@
-// when landing on the page, get all currencies and show them
 function currenciesFactory($http) {
 	var factory = {
 		currencies: [ ],
@@ -12,40 +11,47 @@ function currenciesFactory($http) {
 		});
 	}
 
-	factory.get = function(callback) {
-		$http.get('/api/currencies').success(function(currencies) { 
-	        factory.currencies = currencies; 
-	         
-	        if (callback) { 
-	          callback(currencies); 
-	        } 
-	 
-	        return factory; 
-	    }); 
-	 
-	    return factory; 
-	}
+	// Récupère l'ensemble des cryptos monnaies
+	factory.getCurrencies = function (callback) {
+		var mapping = {
+			'/api/currencies' : 'https://api.cryptee.fr/getalldata'
+		}
 
-	factory.create = function(name, value) {
-		$http.post('/api/currencies', {name: name, value: value}).success(function(currency) {
-			factory.currencies.push(currency);
-		}).error(function(data) {
-			console.log('Error: ' + data);
+		$http.get(mapping['/api/currencies']).success(function(currencies) {
+		    factory.currencies = currencies;
+
+		    if (callback) {
+		    	callback(currencies);
+		    }
+		    return factory;
 		});
 	}
 
-	factory.remove = function(currency, $index) {
-		$http.delete('/api/currencies/' + currency._id).success(function(ebrct) {
-			factory.currencies.splice($index, 1);
-		}).error(function(data) {
-			console.log('Error: ' + data);
-		});
-	};
+	// Récupère l'ensemble des cryptos monnaies
+	factory.getTwoFirst = function (callback) {
+		var mapping = {
+			'/api/currencies' : 'https://api.cryptee.fr/getalldata'
+		}
 
-	factory.list();
+		$http.get(mapping['/api/currencies']).success(function(currencies) {
+			factory.currencies = currencies;
+			var array = [ ];
+			for (var i = 0; i <= 1; i++) {
+				array.push(factory.currencies[i]);
+			}
+
+			factory.currencies = array;
+
+	    if (callback) {
+	    	callback(array);
+	    }
+	    return factory;
+		});
+
+		return factory;
+	}
 
 	return factory;
-	
 }
 
 crypteeApp.factory('currenciesFactory', ['$http', currenciesFactory]);

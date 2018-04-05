@@ -1,0 +1,91 @@
+<div class="wrapper">
+	<div class="banner" style="background-image: url('../img/contact-banner.png');">
+			<h1>Besoin de renseignements ? Contactez-nous</h1>
+		</div>
+		<div class="container">
+			<p class="text">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum at lectus 
+				eget sagittis. Quisque lobortis eget velit vel lobortis. Sed a ex ut ante congue semper.
+				Interdum et malesuada fames ac ante ipsum primis in faucibus.
+				Quisque lobortis eget velit vel lobortis. Sed a ex ut ante congue semper. 
+				Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi ut pharetra dolor.
+			</p>
+		</div>
+	</div>
+</div>
+<div class="line-left">
+	<svg width="19px" height="521px" viewBox="0 0 19 521" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<defs></defs>
+		<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+			<g id="Contact" transform="translate(-78.000000, -384.000000)" stroke-width="2">
+				<path d="M79,479.5 L79,903.501179" id="Line" stroke="#80EDF6"></path>
+				<path d="M96,385.5 L96,691.040914" id="Line-Copy" stroke="#BB8CE2"></path>
+			</g>
+		</g>
+	</svg>
+</div>
+<div class="line-right">
+	<svg width="21px" height="354px" viewBox="0 0 21 354" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<defs></defs>
+		<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+			<g id="Contact" transform="translate(-925.000000, -588.000000)" stroke-width="2">
+				<path d="M926,589.5 L926,759" id="Line-Copy-2" stroke="#BB8CE2"></path>
+				<path d="M945,703.5 L945,941" id="Line-Copy-3" stroke="#80EDF6"></path>
+			</g>
+		</g>
+	</svg>
+</div>
+<div class="wrapper-grey">
+	<div class="container">
+		<div class="contact-card-form">
+			<form id="contact-form" name="contactForm" ng-submit='sendMail()'>
+				<div class="contact-form-container">
+					<div class="contact-form-left">
+							<div class="form-group">
+								<input type="text" name="contactLastName" ng-model="contactLastName" class="form-field" required="required"/>
+								<label class="control-label" for="input">Nom</label><i class="bar"></i>
+								<div ng-if="contactForm.contactLastName.$touched && contactForm.contactLastName.$error" class="alert alert-danger">
+					                <span class="input-error" ng-if="contactForm.contactLastName.$error.required">Merci d'insérer votre nom</span>
+					            </div>
+							</div>
+							<div class="form-group">
+								<input type="text" name="contactFirstName" ng-model="contactFirstName" class="form-field" required="required"/>
+								<label class="control-label" for="input">Prénom</label><i class="bar"></i>
+								<div ng-if="contactForm.contactFirstName.$touched && contactForm.contactFirstName.$error" class="alert alert-danger">
+					                <span class="input-error" ng-if="contactForm.contactFirstName.$error.required">Merci d'insérer votre prénom</span>
+					            </div>
+							</div>
+							<div class="form-group">
+								<input type="email" name="contactEmail" ng-model="contactEmail" class="form-field" required="required"/>
+								<label class="control-label" for="input">Mail</label><i class="bar"></i>
+								<div ng-if="contactForm.contactEmail.$touched && contactForm.contactEmail.$error" class="alert alert-danger">
+					                <span class="input-error" ng-if="contactForm.contactEmail.$error.required">Merci d'insérer votre adresse email</span>
+					                <span class="input-error error-email" ng-if="contactForm.contactEmail.$error.email">Merci d'insérer une adresse email valide</span>
+					            </div>
+							</div>
+					</div>
+					<div class="contact-form-right">
+						<div class="form-group">
+							<input type="text" name="contactSubject" ng-model="contactSubject" class="form-field" required="required"/>
+							<label class="control-label" for="textarea">Sujet</label><i class="bar"></i>
+							<div ng-if="contactForm.contactSubject.$touched && contactForm.contactSubject.$error" class="alert alert-danger">
+				                <span class="input-error" ng-if="contactForm.contactSubject.$error.required">Merci d'insérer un sujet</span>
+				            </div>
+						</div>
+						<div class="form-group">
+							<textarea rows="5" name="contactMsg" id="contactMsg" ng-model="contactMsg" class="form-field" placeholder="Votre message..." required="required" minlength="20" maxlength="999"></textarea>
+							<div ng-if="contactForm.contactMsg.$touched && contactForm.contactMsg.$error" class="alert alert-danger">
+				                <span class="input-error" ng-if="contactForm.contactMsg.$error.required">Merci d'insérer votre message</span>
+				                <span class="input-error" ng-if="contactForm.contactMsg.$error.minlength">Votre message doit contenir au minimum 20 caractères</span>
+				                <span class="input-error" ng-if="contactForm.contactMsg.$error.maxlength">Votre message peut contenir au maximum 999 caractères</span>
+				            </div>
+						</div>
+					</div>
+				</div>
+				<div class="button-container">
+					<button class="main-button" type="submit">Envoyer</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
