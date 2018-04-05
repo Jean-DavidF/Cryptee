@@ -1,0 +1,121 @@
+.content-currency {
+	width: 100%;
+	padding: 20px;
+}
+
+.currency-title {
+	background-color: #fff;
+	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.currency-title img {
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+}
+
+.currency-title h1 {
+	margin-left: 10px;
+	font-family: "Roboto", sans-serif;
+}
+
+.currency-title span {
+	display: block;
+	float: right;
+}
+
+.left-title {
+	display: flex;
+	padding: 15px 0 15px 20px;
+}
+
+.right-title {
+	width: 100%;
+	padding-right: 20px;
+}
+
+.price {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+	height: 150px;
+}
+
+.changes {
+	align-items: center;
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+	height: 150px;
+	margin-top: 20px;
+}
+
+.right-block {
+	width: 30%;
+	float: right;
+	margin-top: 40px;
+}
+
+.price-value {
+	text-align: center;
+}
+
+.price-data {
+	color: #000000;
+	font-weight: bold;
+}
+
+.vertical-line {
+	width: 1px;
+	height: 70%;
+	background-color: lightgrey;
+}
+
+@media screen and (max-width: 800px) {
+	.charts, .right-block {
+		width: 100%;
+		float: none;
+		margin-top: 20px !important;
+	}
+
+	.charts {
+		padding: 5px 15px 0px !important;
+	}
+}
+
+.charts {
+	width:68%;
+	background-color: #fff;
+	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+	float: left;
+	margin-top: 40px;
+	padding: 0 40px;
+}
+
+.changes-title {
+	text-align: center;
+	padding: 15px 0 10px;
+	font-weight: bold;
+}
+
+.panel .form-group {
+	width: 300px;
+}
+
+@media screen and (max-width: 800px) {
+	.panel .form-group {
+		width: 100%;
+		display: block;
+		margin: 20px 0;
+	}
+
+	.panel {
+	    flex-direction: column;
+	}
+}

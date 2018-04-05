@@ -26,6 +26,21 @@ function currencyFactory($http, $location) {
 	    return factory;
 	}
 
+	// Récupère les charts d'une crypto monnaie
+	factory.getCharts = function (callback) {
+		var CurrencyId = $location.path().replace('/dashboard','');
+
+		$http.get('https://api.cryptee.fr/getCharts' + CurrencyId).success(function(currencies) {
+		    factory.currencies = currencies;
+
+		    if (callback) {
+		    	callback(currencies);
+		    }
+		    return factory;
+		});
+
+		return factory;
+	}
 
 	return factory;
 }

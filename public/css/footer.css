@@ -8,6 +8,10 @@
     font-weight: 300;
 }
 
+.footer-dashboard {
+  padding-left: 200px;
+}
+
 .footer .rights {
     float: right;
     margin-right: 25px;
@@ -34,4 +38,10 @@
 		width: 90%;
 		text-align: center;
 	}
+}
+
+@media screen and (max-width: 968px) {
+  .footer-dashboard {
+    padding-left: 0;
+  }
 }

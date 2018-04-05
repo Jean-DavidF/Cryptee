@@ -17,11 +17,35 @@ function currenciesFactory($http) {
 
 		$http.get(mapping['/api/currencies']).success(function(currencies) {
 		    factory.currencies = currencies;
-		    
+
 		    if (callback) {
 		    	callback(currencies);
 		    }
 		    return factory;
+		});
+
+		return factory;
+	}
+
+	// Récupère l'ensemble des cryptos monnaies
+	factory.getTwoFirst = function (callback) {
+		var mapping = {
+			'/api/currencies' : 'https://api.cryptee.fr/getalldata'
+		}
+
+		$http.get(mapping['/api/currencies']).success(function(currencies) {
+			factory.currencies = currencies;
+			var array = [ ];
+			for (var i = 0; i <= 1; i++) {
+				array.push(factory.currencies[i]);
+			}
+
+			factory.currencies = array;
+
+	    if (callback) {
+	    	callback(array);
+	    }
+	    return factory;
 		});
 
 		return factory;
