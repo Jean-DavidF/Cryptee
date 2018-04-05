@@ -12,7 +12,7 @@
           <i class="bar"></i>
         </div>
     </div>
-    
+
     <!-- CURRENCY LIST -->
     <div class="list-container app-list-container">
       <div class="currency-card" ng-repeat="currency in currencies | filter: {'name':searchCurrency}" style="cursor: pointer;" ng-click="viewCurrency(currency.symbol)">
@@ -52,19 +52,5 @@
               </div>
           </div>
       </div>
-    </div>
-
-    <!-- FORM TO CREATE CURRENCIES -->
-    <div>
-        <form>
-            <div>
-                <!-- BIND THIS VALUE TO formData.name IN ANGULAR -->
-                <input type="text" style="display: block; width: 250px;" placeholder="Nom de la crypto-monnaie" ng-model="formData.name">
-                <input type="number" style="display:block; width: 250px;" placeholder="Valeur actuelle de la crypto-monnaie" ng-model="formData.value">
-            </div>
-
-            <!-- createToDo() WILL CREATE NEW TODOS -->
-            <button type="submit" ng-click="createCurrency()">Create</button>
-        </form>
     </div>
 </div>
