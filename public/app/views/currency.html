@@ -1,16 +1,63 @@
-<div class="wrapper">
-	<h1>Page de la crypto-monnaie : {{ currency.name }}</h1>
+<div class="wrapper dashboard">
 
-	<ul>
-		<li>
-			<!-- <img check-image ng-src="{{ currency.img }}"><br> -->
-	        <b>Nom</b> : {{ currency.name}} <br>
-	        <b>Rang</b> : {{ currency.rank }} <br>
-	        <b>Prix (USD)</b> : {{ currency.cmc_price_usd }} <br>
-	        <!-- <b>Prix (EUR)</b> : {{ currency.cmc_price_eur }} <br> -->
-	        <b>Changement sur 1h</b> : {{ currency.percent_change_1h }} %<br>
-	        <b>Changement sur 24h</b> : {{ currency.percent_change_24h }} % <br>
-	        <b>Changement sur 7 jours</b> : {{ currency.percent_change_7d }} % <br>
-	    </li>
-	</ul>
+	<sidebar></sidebar>
+	<div class="content-currency">
+		<div class="currency-title">
+			<div class="left-title">
+				<img check-image="../img/coin.png" ng-src="{{ currency.img }}">
+				<h1>{{ currency.name}}</h1>
+			</div>
+			<div class="right-title">
+				<span>Rang {{ currency.rank }}</span>
+			</div>
+    	</div>
+			<div class="right-block">
+	    	<div class="price">
+	    		<div class="price-USD price-value">
+	    			<span>Prix (USD)</span><br/><br/>
+					<span class="price-data">$ {{ currency.cmc_price_usd }}</span>
+	    		</div>
+	    		<div class="vertical-line"></div>
+	    		<div class="price-EUR price-value">
+	    			<span>Prix (EUR)</span><br/><br/>
+					<span class="price-data">€ {{ currency.cmc_price_eur }}</span>
+	    		</div>
+	    	</div>
+				<div class="changes">
+					<div class="changes-title">Changements</div>
+					<div class="hours-changement">
+						<div>
+							<span>Sur 1h</span><br/>
+							<span class="{{ currency.percent_change_1h > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_1h }}%</span>
+						</div>
+						<div>
+							<span>Sur 24h</span><br/>
+							<span class="{{ currency.percent_change_24h > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_24h }}%</span>
+						</div>
+						<div>
+							<span>Sur 7j</span><br/>
+							<span class="{{ currency.percent_change_7d > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_7d }}%</span>
+						</div>
+					</div>
+				</div>
+			</div>
+    	<div class="charts">
+				<label class="period-label">Choisissez une période</label>
+				<div class="select-styling">
+					<select class="selectPeriod" ng-change="updateFilter()" ng-model="selectPeriod">
+						<option value="">Général</option>
+						<option value="7">7 derniers jours</option>
+						<option value="30" ng-selected="true">30 derniers jours</option>
+						<option value="91.25">3 derniers mois</option>
+						<option value="182.5">6 derniers mois</option>
+						<option value="365">12 derniers mois</option>
+						<option value="730">2 dernières années</option>
+					</select>
+				</div>
+				<div style="width: 100%;">
+					<graphic-line-chart datas="chartPrices" labels="chartDates" options="options" series="series_line_chart" colors="colors_reactive_chart"></graphic-line-chart>
+				</div>
+	    </div>
+	</div>
+	</div>
 </div>
