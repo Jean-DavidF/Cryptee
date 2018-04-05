@@ -81,6 +81,22 @@
   justify-content: space-around;
   padding: 0 20px;
   margin-bottom: 40px;
+  width: 100%;
+  flex-flow: row wrap;
+}
+
+.app-list-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.app-list-container:after {
+  content: "";
+  flex: 0 1 47.5%;
+  margin: 5px;
 }
 
 .currency-more {

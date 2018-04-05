@@ -40,6 +40,10 @@
 	margin-top: 150px;
 }
 
+.subpresentation-text {
+	padding-top: 180px;
+}
+
 #subpresentation-dashboard div.info-crypto {
 	position: absolute;
 	top: -100px;
@@ -51,6 +55,12 @@
   border-radius: 10px;
   max-height: 450px;
 	padding: 20px;
+}
+
+@media screen and (max-width: 800px) {
+	#subpresentation-dashboard div.info-crypto {
+		display: none;
+	}
 }
 
 .background-info {
@@ -97,8 +107,7 @@
 
 .footer-line {
 	width: 100%;
-	margin-top: -90px;
-	margin-bottom: -20px;
+	margin-bottom: 25px;
 }
 
 @media screen and (max-width: 800px) {
@@ -109,18 +118,24 @@
 
 	#subpresentation-dashboard {
 		width: 100%;
-		background-color: #F6F6F6;
-		padding-top: 80px;
-		padding-bottom: 35%;
 		position: relative;
-		margin-top: 150px;
+    height: auto;
+    background-color: #F6F6F6;
+    padding-top: 25px !important;
+    padding-bottom: 80px;
+    position: relative;
+    margin-top: 50px;
 	}
+
+	.subpresentation-text {
+			padding-top: 25px;
+		}
+
 
 	#subpresentation-dashboard div {
 		width: 80%;
 		float: none;
-		margin-left: 50%;
-		transform: translateX(-50%);
+		margin: 0 auto;
 	}
 
 	#subpresentation-dashboard img {
