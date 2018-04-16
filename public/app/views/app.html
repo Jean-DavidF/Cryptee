@@ -16,11 +16,11 @@
     <!-- CURRENCY LIST -->
     <div class="list-container app-list-container">
       <div class="currency-card" ng-repeat="currency in currencies | filter: {'name':searchCurrency}" style="cursor: pointer;" ng-click="viewCurrency(currency.symbol)">
-          <div class="currency-more">
+          <!-- <div class="currency-more">
               <div class="dot"></div>
               <div class="dot"></div>
               <div class="dot"></div>
-          </div>
+          </div> -->
         <img check-image="../img/coin.png" ng-src="{{ currency.img }}" class="symbol-currency">
         <div class="currency-header">
             <span class="currency-name">{{ currency.name}}</span> <br>
