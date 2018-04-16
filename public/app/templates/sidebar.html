@@ -1,9 +1,32 @@
 <!--SIDEBAR-->
 <div class="sidebar">
+    <h3 class="sidebarTitle">Affiner les résultats</h3>
     <ul>
-        <li><a ui-sref="dashboard"><i class="fas fa-chart-area white"></i>Dashboard</a></li>
-        <li><a ui-sref="project"><i class="fas fa-book white"></i>Le projet</a></li>
-        <li><a ui-sref="team"><i class="fas fa-users white"></i>L'équipe</a></li>
-        <li><a ui-sref="contact"><i class="fas fa-envelope white"></i>Contact</a></li>
+      <li>
+        <label>Rechercher</label>
+        <div class="form-group searchCurrency">
+          <input placeholder="Nom crypto-monnaie..." ng-model="searchCurrency">
+          <i class="bar"></i>
+        </div>
+      </li>
+      <li>
+        <label>Plus gros changement</label>
+        <div class="selectSidebar">
+          <select ng-change="updateChange()" ng-model="selectChange">
+            <option value="percent_change_1h">Sur 1h</option>
+            <option value="percent_change_24h">Sur 24h</option>
+            <option value="percent_change_7d">Sur 7 jours</option>
+          </select>
+        </div>
+      </li>
+      <li>
+        <label>Par valeur</label>
+        <div class="selectSidebar">
+          <select ng-change="updateValue()" ng-model="selectValue">
+            <option value="ascending">Croissant</option>
+            <option value="descanding">Décroissant</option>
+          </select>
+        </div>
+      </li>
     </ul>
 </div>

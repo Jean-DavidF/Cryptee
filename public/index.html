@@ -44,7 +44,6 @@
     <script src="app/controllers/CurrencyController.js"></script>
     <script src="app/controllers/ContactController.js"></script>
     <script src="app/controllers/NavbarTopController.js"></script>
-    <script src="app/controllers/NavbarTopDashboardController.js"></script>
     <script src="app/controllers/FooterController.js"></script>
     <script src="app/controllers/FooterDashboardController.js"></script>
     <script src="app/controllers/SidebarController.js"></script>
@@ -57,7 +56,6 @@
     <!-- Directives -->
 
     <script src="app/directives/NavbarTop.js"></script>
-    <script src="app/directives/NavbarTopDashboard.js"></script>
     <script src="app/directives/Footer.js"></script>
     <script src="app/directives/FooterDashboard.js"></script>
     <script src="app/directives/CheckImage.js"></script>
@@ -73,8 +71,7 @@
 <body ng-app="crypteeApp">
 
     <!-- NAVIGATION -->
-    <navbar-top ng-show="!isDashboard()"></navbar-top>
-    <navbar-top-dashboard ng-show="isDashboard()"></navbar-top-dashboard>
+    <navbar-top></navbar-top>
 
     <div id="notificationPinPoint"></div>
 

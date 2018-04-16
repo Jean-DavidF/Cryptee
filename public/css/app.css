@@ -47,24 +47,34 @@
 
 .sidebar ul li {
   list-style: none;
-}
-
-.sidebar ul li a {
-  display: inline-block;
+  display: block;
   color: #FFFFFF;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  padding: 20px 0 20px 30px;
   width: 100%;
+  padding: 10px;
+}
+
+.sidebar ul li label {
+  display: block;
+  font-size:12px;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.sidebarTitle {
+  color: #fff;
+  font-family: "Montserrat", serif;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+  margin: 30px 0;
 }
 
 .sidebar ul li a i {
   margin-right: 10px;
-}
-
-.sidebar ul li:hover {
-  background-color: #5963A5;
 }
 
 .right-list {
@@ -289,8 +299,8 @@
   box-shadow: 1px 1px 7px 1px #00000014;
 }
 
-.select-styling:hover {
-  border-color: #999;
+.selectSidebar select {
+  width : 100%;
 }
 
 .select-styling:after {
@@ -328,6 +338,55 @@
   z-index: -1;
 }
 
+.selectSidebar {
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 1px 1px 7px 1px #00000014;
+}
+
+.selectSidebar:after {
+  content: '';
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+  right: 11px;
+  bottom: 13px;
+  display: block;
+  width: 9px;
+  height: 9px;
+  border: 2px solid white;
+  border-top: none;
+  border-right: none;
+  z-index: -1;
+}
+
+.selectSidebar:before {
+  content: '';
+  color: #333;
+  display: block;
+  font-size: 1em;
+  height: 100%;
+  line-height: 2.5em;
+  padding: 0 0.625em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #28306a;
+  text-align: center;
+  width: 30px;
+  z-index: -1;
+}
+
 .period-label {
     display: block;
     margin: 20px 0 10px;
@@ -336,7 +395,7 @@
     font-weight: bold;
 }
 
-.select-styling select {
+.select-styling select, .selectSidebar select {
   cursor: pointer;
   background-color: transparent;
   border: 0 none;
@@ -356,17 +415,40 @@
   appearance: none;
 }
 
-.select-styling select::-ms-expand {
+.selectSidebar select {
+  padding: 0.4em;
+}
+
+.select-styling select::-ms-expand, .selectSidebar select::-ms-expand {
   display: none;
   /* to ie 10 */
 }
 
-.select-styling select:focus {
+.select-styling select:focus, .selectSidebar select:focus {
   outline: none;
 }
 
 :-moz-any(.select-styling):before,
-:-moz-any(.select-styling):after {
+:-moz-any(.select-styling):after,
+:-moz-any(.selectSidebar):before,
+:-moz-any(.selectSidebar):after, {
   pointer-events: none;
   z-index: 1;
+}
+
+.searchCurrency input {
+  color: #fff !important;
+  font-size: 12px;
+}
+
+.searchCurrency input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.searchCurrency .bar {
+  border-bottom: 0.0625rem solid #F8F8F8;
+}
+
+.searchCurrency .bar::before {
+  background: #fff;
 }
