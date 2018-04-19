@@ -12,7 +12,8 @@
       <li>
         <label>Plus gros changement</label>
         <div class="selectSidebar">
-          <select ng-change="updateChange()" ng-model="selectChange">
+          <select ng-change="updateChange()" ng-model="selectChange" name="selectChange">
+            <option value="">---</option>
             <option value="percent_change_1h">Sur 1h</option>
             <option value="percent_change_24h">Sur 24h</option>
             <option value="percent_change_7d">Sur 7 jours</option>
@@ -22,7 +23,8 @@
       <li>
         <label>Par valeur</label>
         <div class="selectSidebar">
-          <select ng-change="updateValue()" ng-model="selectValue">
+          <select ng-change="updateValue()" ng-model="selectValue" name="selectValue">
+            <option value="">---</option>
             <option value="ascending">Croissant</option>
             <option value="descanding">Décroissant</option>
           </select>

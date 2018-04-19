@@ -7,6 +7,15 @@
   bottom: -20px;
 }
 
+.panel h1 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.dateTime {
+  color: #272F6B;
+}
+
 .panel input {
   border: none;
   padding: 10px;
@@ -22,7 +31,7 @@
 .dashboard {
   background-color: #f9f9f9;
   display: flex;
-  padding-left: 200px;
+  padding-left: 250px;
   transition: all 130ms ease-in-out;
   -webkit-transition: all 130ms ease-in-out;
   -moz-transition: all 130ms ease-in-out;
@@ -33,7 +42,7 @@
   top: 60px;
   left: 0 !important;
   bottom: 0;
-  width: 200px;
+  width: 250px;
   background-color: #485190;
   position: fixed;
   padding-top: 20px;
@@ -78,7 +87,7 @@
 }
 
 .right-list {
-  padding-left: 200px;
+  padding-left: 250px;
   transition: all 130ms ease-in-out;
   -webkit-transition: all 130ms ease-in-out;
   -moz-transition: all 130ms ease-in-out;
@@ -272,7 +281,7 @@
   }
 
   .sidebar {
-    left: -210px !important;
+    left: -260px !important;
   }
 }
 
@@ -451,4 +460,45 @@
 
 .searchCurrency .bar::before {
   background: #fff;
+}
+
+.actions-list {
+  display: none;
+}
+
+@media screen and (max-width: 968px) {
+  .actions-list {
+    display: block !important;
+    width: 80%;
+    margin: 15px 0;
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .actions-list li {
+    display: block;
+    margin: 15px 0;
+  }
+
+  .form-group {
+    margin: 0;
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .searchCurrency::placeholder{
+    color: #333;
+  }
+
+  .searchCurrency .bar::before {
+    background: #272F6B;
+  }
+
+  .searchCurrency .bar {
+    border-bottom: 0.0625rem solid #3B4589;
+  }
 }
