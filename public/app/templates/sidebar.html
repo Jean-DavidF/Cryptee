@@ -1,10 +1,42 @@
 <!--SIDEBAR-->
 <div class="sidebar">
-    <ul>
-        <li><a href=""><i class="fas fa-dollar-sign white"></i> Balance</a></li>
-        <li><a ui-sref="dashboard"><i class="fas fa-chart-area white"></i>Dashboard</a></li>
-        <li><a href=""><i class="fas fa-signal white"></i>Base stations</a></li>
-        <li><a href=""><i class="fas fa-cubes white"></i>My projects</a></li>
-        <li><a href=""><i class="fas fa-cog white"></i>Settings</a></li>
+    <h3 class="sidebarTitle" ng-show="!isCoinPage()">Affiner les résultats</h3>
+    <h3 class="sidebarTitle" ng-show="isCoinPage()">Ces crypto-monnaies pourraient vous intéresser</h3>
+    <ul ng-show="!isCoinPage()">
+      <li>
+        <label>Rechercher</label>
+        <div class="form-group searchCurrency">
+          <input placeholder="Nom crypto-monnaie..." ng-model="searchCurrency">
+          <i class="bar"></i>
+        </div>
+      </li>
+      <li>
+        <label>Plus gros changement</label>
+        <div class="selectSidebar">
+          <select ng-change="updateChange()" ng-model="selectChange" name="selectChange">
+            <option value="">---</option>
+            <option value="percent_change_1h">Sur 1h</option>
+            <option value="percent_change_24h">Sur 24h</option>
+            <option value="percent_change_7d">Sur 7 jours</option>
+          </select>
+        </div>
+      </li>
+      <li>
+        <label>Par valeur</label>
+        <div class="selectSidebar">
+          <select ng-change="updateValue()" ng-model="selectValue" name="selectValue">
+            <option value="">---</option>
+            <option value="ascending">Croissant</option>
+            <option value="descanding">Décroissant</option>
+          </select>
+        </div>
+      </li>
+    </ul>
+    <ul ng-show="isCoinPage()" class="currenciesSidebarList">
+      <li class="currencyOverview" ng-repeat="currency in currencies" ng-click="viewCurrency(currency.symbol)">
+        <img check-image="../img/coin.png" ng-src="{{ currency.img }}" class="symbol-currency">
+        <span class="currency-name-overview">{{ currency.name }}</span>
+        <span class="currency-value-overview {{ currency.percent_change_24h > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_24h }}%</span>
+      </li>
     </ul>
 </div>

@@ -11,6 +11,10 @@ function NavbarTopController($scope, $location) {
             return false;
         }
     }
+
+    $(document).on('click', '.navLink', function(event) {
+      $('.menu-navbar-top').toggleClass('slide-menu');
+    });
 }
 
 crypteeApp.controller('NavbarTopController', ['$scope', '$location', NavbarTopController]);
