@@ -86,6 +86,53 @@
   margin-right: 10px;
 }
 
+.currencyOverview {
+  width: 90% !important;
+  margin: 8px auto;
+  display: flex !important;
+  align-items: center;
+  cursor: pointer;
+  background: #5f68af;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 0px 3px 4px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 3px 4px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 3px 4px 1px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0px 3px 4px 1px rgba(0, 0, 0, 0.1);
+  transition: all 200ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+
+.currencyOverview:hover {
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  transform: scale(1.02);
+  box-shadow: 0px 3px 4px 1px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0px 3px 4px 1px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0px 3px 4px 1px rgba(0, 0, 0, 0.12);
+  -o-box-shadow: 0px 3px 4px 1px rgba(0, 0, 0, 0.12);
+}
+
+.currencyOverview .currency-value-overview {
+    margin-left: auto;
+}
+
+.currencyOverview .currency-name-overview {
+  margin-left: 10px;
+  color: #ffffff;
+}
+
 .right-list {
   padding-left: 250px;
   transition: all 130ms ease-in-out;
@@ -141,6 +188,9 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.085);
   padding: 15px 15px;
   transition: all 200ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -ms-transform: scale(1);
@@ -466,6 +516,10 @@
   display: none;
 }
 
+.currencies-list-overview {
+  display: none;
+}
+
 @media screen and (max-width: 968px) {
   .actions-list {
     display: block !important;
@@ -474,6 +528,28 @@
     list-style: none;
     padding-left: 0;
     margin-left: 0;
+  }
+
+  .currencies-list-overview {
+    display: block;
+    width: 100%;
+    margin: 15px auto;
+  }
+
+  .currencies-list-overview h3 {
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .currencies-list-overview li {
+    list-style: none;
+    display: block;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
   }
 
   .actions-list li {

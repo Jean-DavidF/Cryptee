@@ -1,9 +1,32 @@
-function CurrencyController($scope, currencyFactory, $location) {
+function CurrencyController($scope, currencyFactory, currenciesFactory, $location, $state) {
 		$scope.currency = [ ];
+		$scope.currencies = [ ];
+		$scope.currencyId = $location.path().replace('/dashboard/','');
 
 		currencyFactory.getCurrency(function(data) {
 	      $scope.currency = data[0];
 	  });
+
+		$scope.viewCurrency = function(Id) {
+        $state.go('currency', {CoinId : Id});
+    };
+
+		currenciesFactory.getCurrencies(function(data) {
+				var currencies = data;
+				var currencyIndex = currencies.findIndex(x => x.symbol == $scope.currencyId);
+				var j = currencyIndex - 1;
+
+				for (var i = currencyIndex + 1; i < currencyIndex + 11; i++) {
+					if (currencies[i] === undefined || currencies[i] == null) {
+						if ($scope.currencies.length < 10) {
+							$scope.currencies.unshift(currencies[j]);
+							j--;
+						}
+					} else {
+						$scope.currencies.push(currencies[i]);
+					}
+				}
+		});
 
 		$scope.selectPeriod = "30";
 
@@ -112,4 +135,4 @@ function CurrencyController($scope, currencyFactory, $location) {
 		}
 }
 
-crypteeApp.controller('CurrencyController', ['$scope', 'currencyFactory' , '$location', CurrencyController]);
+crypteeApp.controller('CurrencyController', ['$scope', 'currencyFactory', 'currenciesFactory', '$location', '$state', CurrencyController]);

@@ -58,9 +58,21 @@
 					</select>
 				</div>
 				<div style="width: 100%;">
+
 					<graphic-line-chart datas="chartPrices" labels="chartDates" options="options" series="series_line_chart" colors="colors_reactive_chart"></graphic-line-chart>
+
 				</div>
 	    </div>
+			<div class="currencies-list-overview">
+				<h3>Ces crypto-monnaies pourraient vous intéresser</h3>
+				<ul class="currenciesSidebarList">
+					<li class="currencyOverview" ng-repeat="currency in currencies" ng-click="viewCurrency(currency.symbol)">
+						<img check-image="../img/coin.png" ng-src="{{ currency.img }}" class="symbol-currency">
+						<span class="currency-name-overview">{{ currency.name }}</span>
+						<span class="currency-value-overview {{ currency.percent_change_24h > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_24h }}%</span>
+					</li>
+				</ul>
+			</div>
 	</div>
 	</div>
 </div>

@@ -1,7 +1,8 @@
 <!--SIDEBAR-->
 <div class="sidebar">
-    <h3 class="sidebarTitle">Affiner les résultats</h3>
-    <ul>
+    <h3 class="sidebarTitle" ng-show="!isCoinPage()">Affiner les résultats</h3>
+    <h3 class="sidebarTitle" ng-show="isCoinPage()">Ces crypto-monnaies pourraient vous intéresser</h3>
+    <ul ng-show="!isCoinPage()">
       <li>
         <label>Rechercher</label>
         <div class="form-group searchCurrency">
@@ -29,6 +30,13 @@
             <option value="descanding">Décroissant</option>
           </select>
         </div>
+      </li>
+    </ul>
+    <ul ng-show="isCoinPage()" class="currenciesSidebarList">
+      <li class="currencyOverview" ng-repeat="currency in currencies" ng-click="viewCurrency(currency.symbol)">
+        <img check-image="../img/coin.png" ng-src="{{ currency.img }}" class="symbol-currency">
+        <span class="currency-name-overview">{{ currency.name }}</span>
+        <span class="currency-value-overview {{ currency.percent_change_24h > 0 ? 'positive-value' : 'negative-value' }}">{{ currency.percent_change_24h }}%</span>
       </li>
     </ul>
 </div>
