@@ -40,6 +40,22 @@
 	margin-top: 150px;
 }
 
+.presentation-block {
+	padding-top: 290px;
+}
+
+@media screen and (max-width: 800px) {
+	.presentation-block {
+		padding-top: 25%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.presentation-block h2 {
+		width: auto !important;
+	}
+}
+
 .subpresentation-text {
 	padding-top: 180px;
 }
@@ -96,7 +112,6 @@
 }
 
 .top-footer {
-	margin-top: 150px;
 	background-color: #272F6B;
 	position: relative;
 }
@@ -146,7 +161,6 @@
 	}
 
 	.top-footer {
-		margin-top: 180px;
 		background-color: #272F6B;
 		position: relative;
 	}
