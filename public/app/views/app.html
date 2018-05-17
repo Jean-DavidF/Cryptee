@@ -5,22 +5,41 @@
     <div class="right-list">
     <!-- HEADER AND CURRENCY COUNT -->
     <div class="panel">
-        <h1>Liste des crypto-monnaies</h1>
+        <h1>Capitalisation des 100 premières crypto-monnaies <span class="dateTime">le {{ dateTime }}</span></h1>
         <!-- SEARCH CURRENCY -->
-        <div class="form-group">
-          <input placeholder="Rechercher une crypto-monnaie..." ng-model="searchCurrency">
-          <i class="bar"></i>
-        </div>
+        <ul class="actions-list">
+          <li>
+            <label>Rechercher</label>
+            <div class="form-group searchCurrency">
+              <input placeholder="Nom crypto-monnaie..." ng-model="searchCurrency" class="searchCurrencyMobile">
+              <i class="bar"></i>
+            </div>
+          </li>
+          <li>
+            <label>Plus gros changement</label>
+            <div class="selectSidebar">
+              <select ng-change="updateChange()" ng-model="selectChange">
+                <option value="percent_change_1h">Sur 1h</option>
+                <option value="percent_change_24h">Sur 24h</option>
+                <option value="percent_change_7d">Sur 7 jours</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <label>Par valeur</label>
+            <div class="selectSidebar">
+              <select ng-change="updateValue()" ng-model="selectValue">
+                <option value="ascending">Croissant</option>
+                <option value="descanding">Décroissant</option>
+              </select>
+            </div>
+          </li>
+        </ul>
     </div>
 
     <!-- CURRENCY LIST -->
     <div class="list-container app-list-container">
       <div class="currency-card" ng-repeat="currency in currencies | filter: {'name':searchCurrency}" style="cursor: pointer;" ng-click="viewCurrency(currency.symbol)">
-          <div class="currency-more">
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-          </div>
         <img check-image="../img/coin.png" ng-src="{{ currency.img }}" class="symbol-currency">
         <div class="currency-header">
             <span class="currency-name">{{ currency.name}}</span> <br>
