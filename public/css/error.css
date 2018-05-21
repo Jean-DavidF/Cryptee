@@ -1,0 +1,24 @@
+.error {
+    height: calc(100vh - 90px);
+    max-height: calc(100vh-90px);
+    width: 100%;
+}
+
+.error-content {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+}
+
+.error-content h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #28306a;
+}
+
+.error-content a {
+  margin-top: 25px;
+  display: inline-block;
+}
