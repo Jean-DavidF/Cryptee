@@ -2,7 +2,7 @@ var crypteeApp = angular.module('crypteeApp', ['ui.router', 'chart.js']);
 
 crypteeApp.config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/error');
 
     $stateProvider
 
@@ -53,6 +53,14 @@ crypteeApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'app/views/currency.html',
             controller: 'CurrencyController'
         })
+
+        // Error
+
+        .state('error', {
+            url: '/error',
+            templateUrl: 'app/views/error.html',
+            controller: 'ErrorController'
+        });
 
 });
 

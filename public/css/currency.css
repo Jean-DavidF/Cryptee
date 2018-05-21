@@ -54,11 +54,28 @@
 .left-title {
 	display: flex;
 	padding: 15px 0 15px 20px;
+	flex-basis: 70%;
 }
 
 .right-title {
 	width: 100%;
 	padding-right: 20px;
+	flex-basis: 30%;
+}
+
+@media screen and (max-width: 800px) {
+	.currency-title {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.left-title, .right-title {
+    flex-basis: auto;
+    text-align: center;
+    width: auto;
+    padding: 0px;
+    margin: 10px 0px;
+	}
 }
 
 .price {
