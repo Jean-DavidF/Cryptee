@@ -1,6 +1,6 @@
 function TeamController($scope) {
     $(document).ready(function() {
-  
+
         var $slider = $(".slider"),
             $slideBGs = $(".slide__bg"),
             diff = 0,
@@ -11,7 +11,7 @@ function TeamController($scope) {
             autoSlideTimeout,
             autoSlideDelay = 6000,
             $pagination = $(".slider-pagi");
-        
+
         function createBullets() {
           for (var i = 0; i < numOfSlides+1; i++) {
             var $li = $("<li class='slider-pagi__elem'></li>");
@@ -20,15 +20,15 @@ function TeamController($scope) {
             $pagination.append($li);
           }
         };
-        
+
         createBullets();
-        
+
         function manageControls() {
           $(".slider-control").removeClass("inactive");
           if (!curSlide) $(".slider-control.left").addClass("inactive");
           if (curSlide === numOfSlides) $(".slider-control.right").addClass("inactive");
         };
-        
+
         function autoSlide() {
           autoSlideTimeout = setTimeout(function() {
             curSlide++;
@@ -36,9 +36,9 @@ function TeamController($scope) {
             changeSlides();
           }, autoSlideDelay);
         };
-        
-        autoSlide();
-        
+
+        // autoSlide();
+
         function changeSlides(instant) {
           if (!instant) {
             animating = true;
@@ -58,28 +58,28 @@ function TeamController($scope) {
           $slider.css("transform", "translate3d("+ -curSlide*100 +"%,0,0)");
           $slideBGs.css("transform", "translate3d("+ curSlide*50 +"%,0,0)");
           diff = 0;
-          autoSlide();
+          // autoSlide();
         }
-      
+
         function navigateLeft() {
           if (animating) return;
           if (curSlide > 0) curSlide--;
           changeSlides();
         }
-      
+
         function navigateRight() {
           if (animating) return;
           if (curSlide < numOfSlides) curSlide++;
           changeSlides();
         }
-      
+
         $(document).on("mousedown touchstart", ".slider", function(e) {
           if (animating) return;
           window.clearTimeout(autoSlideTimeout);
           var startX = e.pageX || e.originalEvent.touches[0].pageX,
               winW = $(window).width();
           diff = 0;
-          
+
           $(document).on("mousemove touchmove", function(e) {
             var x = e.pageX;
             diff = (startX - x) / winW * 70;
@@ -88,7 +88,7 @@ function TeamController($scope) {
             $slideBGs.css("transform", "translate3d("+ (curSlide*50 + diff/2) +"%,0,0)");
           });
         });
-        
+
         $(document).on("mouseup touchend", function(e) {
           $(document).off("mousemove touchmove");
           if (animating) return;
@@ -107,7 +107,7 @@ function TeamController($scope) {
             navigateRight();
           }
         });
-        
+
         $(document).on("click", ".slider-control", function() {
           if ($(this).hasClass("left")) {
             navigateLeft();
@@ -115,12 +115,12 @@ function TeamController($scope) {
             navigateRight();
           }
         });
-        
+
         $(document).on("click", ".slider-pagi__elem", function() {
           curSlide = $(this).data("page");
           changeSlides();
         });
-        
+
       });
 }
 

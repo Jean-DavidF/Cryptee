@@ -2,11 +2,13 @@ function AppController($scope, currenciesFactory, $location, $http, $state) {
     $scope.currencies = [ ];
     $scope.saveCurrencies = [ ];
     $scope.searchCurrency = '';
+    $('#loading').css('display', 'block');
 
     $scope.currenciesFactory = currenciesFactory;
 
     currenciesFactory.getCurrencies(function(data) {
         $scope.currencies = data;
+        $('#loading').fadeOut();
     });
 
     $scope.dateTime = new Date;
@@ -34,7 +36,6 @@ function AppController($scope, currenciesFactory, $location, $http, $state) {
             $scope.currencies = data;
         });
       }
-
 		};
 
     $scope.updateValue = function() {
@@ -53,13 +54,10 @@ function AppController($scope, currenciesFactory, $location, $http, $state) {
             $scope.currencies = data;
         });
       }
-
     }
 
     var AllCurrenciesInterval = setInterval(function(){
         if ('/dashboard' === $location.path()) {
-          console.log($scope.selectValue);
-          console.log($scope.selectChange);
           if ($scope.selectValue == undefined && $scope.selectChange == undefined) {
             currenciesFactory.getCurrencies(function(data) {
                 $scope.currencies = data;
@@ -101,18 +99,17 @@ function AppController($scope, currenciesFactory, $location, $http, $state) {
                   ].join('h');
      $scope.dateTime = dformat;
 
-     function resetFilter(select1, select2) {
+    function resetFilter(select1, select2) {
        $(document).on('change', 'select[name=' + select1 + ']', function(event) {
          var select = $('select[name=' + select2 + ']');
          if (select.val()) {
            select.val('');
          }
        });
-     }
+    }
 
-     resetFilter('selectChange', 'selectValue');
-     resetFilter('selectValue', 'selectChange');
-
+    resetFilter('selectChange', 'selectValue');
+    resetFilter('selectValue', 'selectChange');
 }
 
 crypteeApp.controller('AppController', ['$scope', 'currenciesFactory', '$location', '$http', '$state', AppController]);

@@ -8,7 +8,6 @@ function SidebarController($scope, $location) {
         return false;
       }
   }
-
 }
 
 crypteeApp.controller('SidebarController', ['$scope', '$location', SidebarController]);
