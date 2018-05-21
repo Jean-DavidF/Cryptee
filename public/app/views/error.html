@@ -3,7 +3,7 @@
     <div class="error-content">
       <h1>404</h1>
       <p>La page demandée est introuvable.</p>
-      <a ui-sref="landing" class="main-button">Retour à l'accueil</a>
+      <a ng-click="backState(previousState.state, previousState.params)" class="main-button">Retour</a>
     </div>
   </div>
 </div>
