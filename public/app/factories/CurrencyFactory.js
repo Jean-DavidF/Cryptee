@@ -1,4 +1,4 @@
-function currencyFactory($http, $location) {
+function currencyFactory($http, $location, $state) {
 	var factory = {
 		currency: [ ],
 	};
@@ -15,6 +15,10 @@ function currencyFactory($http, $location) {
 
 	    $http.get('https://api.cryptee.fr/getdata' + CurrencyId).success(function(currency) {
 	    	factory.currency = currency;
+
+				if (factory.currency.length == 0) {
+					$state.go('error');
+				}
 
 	    	if (callback) {
 	    		callback(currency);
@@ -45,4 +49,4 @@ function currencyFactory($http, $location) {
 	return factory;
 }
 
-crypteeApp.factory('currencyFactory', ['$http', '$location' , currencyFactory]);
+crypteeApp.factory('currencyFactory', ['$http', '$location', '$state', currencyFactory]);
