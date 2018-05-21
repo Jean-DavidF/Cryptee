@@ -137,12 +137,23 @@ svg {
   background-size: cover;
   will-change: transform;
 }
+
+@media screen and (min-width: 990px) {
+  .slide__bg {
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position-x: 600px;
+    background-position-y: -30px;
+    background-size: 850px !important;
+  }
+}
+
 .slide:nth-child(1) {
   left: 0;
 }
 .slide:nth-child(1) .slide__bg {
   left: 0;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/3d-slider-3.jpg");
+  background-image: url("../img/clement.jpg");
 }
 .slide:nth-child(1) .slide__overlay-path {
   fill: #fff;
@@ -157,7 +168,7 @@ svg {
 }
 .slide:nth-child(2) .slide__bg {
   left: -50%;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/3d-slider-2.jpg");
+  background-image: url("../img/jd.jpg");
 }
 .slide:nth-child(2) .slide__overlay-path {
   fill: #fff;
@@ -186,7 +197,7 @@ svg {
 }
 .slide:nth-child(4) .slide__bg {
   left: -150%;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/3d-slider-4.jpg");
+  background-image: url("../img/guillaume.jpg");
 }
 .slide:nth-child(4) .slide__overlay-path {
   fill: #fff;
