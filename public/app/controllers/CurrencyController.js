@@ -2,9 +2,11 @@ function CurrencyController($scope, currencyFactory, currenciesFactory, $locatio
 		$scope.currency = [ ];
 		$scope.currencies = [ ];
 		$scope.currencyId = $location.path().replace('/dashboard/','');
+		$('#loading').css('display', 'block');
 
 		currencyFactory.getCurrency(function(data) {
 	      $scope.currency = data[0];
+				$('#loading').fadeOut();
 	  });
 
 		$scope.viewCurrency = function(Id) {
