@@ -16,7 +16,8 @@ svg {
 
 .slider-container {
   position: relative;
-  height: 86.7vh;
+  /* height: 86.7vh; */
+  height: calc(100vh - 90px);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
