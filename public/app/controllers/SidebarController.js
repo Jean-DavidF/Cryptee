@@ -1,4 +1,4 @@
-function SidebarController($scope, $location) {
+function SidebarController($scope, $location, $rootScope) {
 
   $scope.isCoinPage = function () {
       var urlArray = ($location.path()).split('/');
@@ -8,7 +8,6 @@ function SidebarController($scope, $location) {
         return false;
       }
   }
-
 }
 
-crypteeApp.controller('SidebarController', ['$scope', '$location', SidebarController]);
+crypteeApp.controller('SidebarController', ['$scope', '$location', '$rootScope', SidebarController]);

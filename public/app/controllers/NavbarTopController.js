@@ -1,5 +1,5 @@
 function NavbarTopController($scope, $location) {
-
+    $scope.isStateLoading = true;
     $scope.isActive = function (viewLocation) {
 		    return $location.path().indexOf(viewLocation) !== -1;
     }

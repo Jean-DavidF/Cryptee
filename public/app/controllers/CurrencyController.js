@@ -1,11 +1,17 @@
-function CurrencyController($scope, currencyFactory, currenciesFactory, $location, $state) {
+function CurrencyController($scope, currencyFactory, currenciesFactory, $location, $state, $timeout) {
 		$scope.currency = [ ];
 		$scope.currencies = [ ];
 		$scope.currencyId = $location.path().replace('/dashboard/','');
+		$('#loading').css('display', 'block');
 
 		currencyFactory.getCurrency(function(data) {
 	      $scope.currency = data[0];
+				$('#loading').fadeOut();
 	  });
+
+		function applyScope() {
+			$scope.$apply();
+		}
 
 		$scope.viewCurrency = function(Id) {
         $state.go('currency', {CoinId : Id});
@@ -135,4 +141,4 @@ function CurrencyController($scope, currencyFactory, currenciesFactory, $locatio
 		}
 }
 
-crypteeApp.controller('CurrencyController', ['$scope', 'currencyFactory', 'currenciesFactory', '$location', '$state', CurrencyController]);
+crypteeApp.controller('CurrencyController', ['$scope', 'currencyFactory', 'currenciesFactory', '$location', '$state', '$timeout', CurrencyController]);
