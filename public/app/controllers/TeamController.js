@@ -37,7 +37,7 @@ function TeamController($scope) {
           }, autoSlideDelay);
         };
 
-        // autoSlide();
+        autoSlide();
 
         function changeSlides(instant) {
           if (!instant) {
@@ -58,7 +58,7 @@ function TeamController($scope) {
           $slider.css("transform", "translate3d("+ -curSlide*100 +"%,0,0)");
           $slideBGs.css("transform", "translate3d("+ curSlide*50 +"%,0,0)");
           diff = 0;
-          // autoSlide();
+          autoSlide();
         }
 
         function navigateLeft() {
