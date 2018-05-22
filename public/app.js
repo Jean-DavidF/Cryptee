@@ -1,8 +1,13 @@
 var crypteeApp = angular.module('crypteeApp', ['ui.router', 'chart.js']);
 
-crypteeApp.config(function($stateProvider, $urlRouterProvider) {
+crypteeApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $urlRouterProvider.otherwise('/error');
+    $locationProvider.html5Mode({
+
+        enabled: true
+
+    });
 
     $stateProvider
 
@@ -62,7 +67,7 @@ crypteeApp.config(function($stateProvider, $urlRouterProvider) {
             controller: 'ErrorController'
         });
 
-});
+}]);
 
 function MainController($route, $routeParams, $location) {
     this.$route = $route;
